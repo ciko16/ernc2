@@ -1,0 +1,16 @@
+.pagination-green .page-link {
+    background-color: wheat; /* Warna hijau */
+    color: whitesmoke !important; /* Warna teks */
+}
+
+.pagination-green .page-item.active .page-link {
+    background-color: #87b753; /* Warna hijau */
+    border-color: #87b753; /* Warna border */
+    color: whitesmoke !important; /* Warna teks */
+}
+
+.pagination-green .page-link:hover {
+    background-color: #f8a217; /* Warna hijau lebih gelap untuk hover */
+    border-color: #6fa940; /* Warna border untuk hover */
+    color: whitesmoke !important; /* Warna teks */
+}

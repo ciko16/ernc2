@@ -1,0 +1,78 @@
+/* Gaya dasar untuk tabel */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 14px;
+    text-align: left;
+    background-color: #f8f9fa; /* Warna latar belakang tabel */
+}
+
+/* Gaya untuk header tabel */
+.table thead tr {
+    background-color: #87b753; /* Warna latar belakang header */
+    color: #2d5a27 !important; /* Warna teks header */
+    text-align: left;
+    font-size: 14px;
+}
+
+/* Gaya untuk sel header */
+.table thead th,
+.table thead td {
+    padding: 12px 15px;
+    border-bottom: 2px solid #dee2e6; /* Border bawah header */
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Gaya untuk baris tabel */
+.table tbody tr {
+    border-bottom: 1px solid #dee2e6; /* Border bawah baris tabel */
+}
+
+/* Gaya untuk sel tabel */
+.table tbody td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+/* Gaya untuk baris tabel saat di-hover */
+.table tbody tr:hover {
+    background-color: #e9ecef; /* Warna latar belakang saat di-hover */
+}
+
+
+/* Gaya untuk gambar lampiran sampel */
+.thumbnail-image {
+    max-width: 100px;
+    height: auto;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+/* Gaya untuk badge */
+.badge {
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Warna khusus untuk badge */
+.badge-info {
+    background-color: #17a2b8;
+}
+
+.badge-warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.badge-danger {
+    background-color: #dc3545;
+}
+
+.badge:hover {
+    opacity: 0.8; /* Efek hover pada badge */
+}
