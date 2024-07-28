@@ -173,7 +173,7 @@
                                         <canvas id="myBarChart"></canvas>
                                     </div>
                                     <hr>
-                                    Grafik Data Kalender Peminjaman Lab
+                                    Grafik Data Kalender Agenda Lab
                                 </div>
                             </div>
          </div>
