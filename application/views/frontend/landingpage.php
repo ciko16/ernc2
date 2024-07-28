@@ -35,7 +35,7 @@
     <div class="container px-5 my-5" style="background-color: #69c96e80;">
         <div class="text-center mb-5">
             <h2 class="fw-bolder">Layanan Lab ERNC²</h2>
-            <p class="lead mb-0">Laboratorium fisika material Energy Research Nano Carbon Centre (ERNC²) menyediakan layanan untuk mahasiswa, dosen, atau umum yang membutuhkan bantuan dalam proses konversi limbah biomassa menjadi karbon aktif berpori (pembakaran menggunakan furnace) atau alat yang dibutuhkan dalam eksperimen lainnya terkait pembuatan elektroda superkapasitor beserta layanan karakterisasi sifat elektrokimia seperti siklik voltametri (CV) dan galvanostatik charge-discharge (GCD).</p>
+            <p class="lead mb-0">Apa saja layanan yang ditawarkan?</p>
         </div>
         <div class="row gx-5">
             <!-- Service 1 -->
