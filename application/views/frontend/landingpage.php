@@ -35,7 +35,7 @@
     <div class="container px-5 my-5" style="background-color: #69c96e80;">
         <div class="text-center mb-5">
             <h2 class="fw-bolder">Layanan Lab ERNC²</h2>
-            <p class="lead mb-0">Apa saja layanan yang ditawarkan?</p>
+            <p class="lead mb-0">Laboratorium fisika material Energy Research Nano Carbon Centre (ERNC²) menyediakan layanan untuk mahasiswa, dosen, atau umum yang membutuhkan bantuan dalam proses konversi limbah biomassa menjadi karbon aktif berpori (pembakaran menggunakan furnace) atau alat yang dibutuhkan dalam eksperimen lainnya terkait pembuatan elektroda superkapasitor beserta layanan karakterisasi sifat elektrokimia seperti siklik voltametri (CV) dan galvanostatik charge-discharge (GCD).</p>
         </div>
         <div class="row gx-5">
             <!-- Service 1 -->
@@ -44,8 +44,8 @@
                     <div class="icon-box bg-light rounded-circle mb-4 mx-auto">
                         <i class="bi bi-gear-fill" style="font-size: 3rem; color: #6c757d;"></i>
                     </div>
-                    <h5 class="fw-bolder">Electrochemical Characterization</h5>
-                    <p class="text-muted">Detailed analysis of electrochemical properties for various materials.</p>
+                    <h5 class="fw-bolder">Konversi Limbah Biomassa</h5>
+                    <p class="text-muted">Proses konversi limbah biomassa menjadi karbon aktif berpori menggunakan furnace.</p>
                 </div>
             </div>
             <!-- Service 2 -->
@@ -54,8 +54,8 @@
                     <div class="icon-box bg-light rounded-circle mb-4 mx-auto">
                         <i class="bi bi-calendar-date-fill" style="font-size: 3rem; color: #6c757d;"></i>
                     </div>
-                    <h5 class="fw-bolder">Material Testing</h5>
-                    <p class="text-muted">Comprehensive testing services for different types of materials.</p>
+                    <h5 class="fw-bolder">Pembuatan Elektroda Superkapasitor</h5>
+                    <p class="text-muted">Layanan pembuatan elektroda superkapasitor dan eksperimen terkait.</p>
                 </div>
             </div>
             <!-- Service 3 -->
@@ -64,8 +64,8 @@
                     <div class="icon-box bg-light rounded-circle mb-4 mx-auto">
                         <i class="bi bi-lightbulb-fill" style="font-size: 3rem; color: #6c757d;"></i>
                     </div>
-                    <h5 class="fw-bolder">Innovative Solutions</h5>
-                    <p class="text-muted">Providing innovative and sustainable solutions for energy and nanotechnology.</p>
+                    <h5 class="fw-bolder">Karakterisasi Sifat Elektrokimia</h5>
+                    <p class="text-muted">Layanan karakterisasi sifat elektrokimia seperti siklik voltametri (CV) dan galvanostatik charge-discharge (GCD).</p>
                 </div>
             </div>
         </div>
