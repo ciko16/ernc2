@@ -141,7 +141,7 @@
 </head>
 <body>
     <!-- Responsive navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:  #69c96e80;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(90deg, #9cc545, #7bbd45);">
         <div class="container px-5">
             <a class="navbar-brand" href="#!">
             <img src="<?php echo base_url('frontend/assets/tes.png'); ?>" alt="Custom Icon" style="width: 50px; height: 50px; margin-right: 8px;">
