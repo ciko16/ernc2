@@ -121,7 +121,7 @@ class PeminjamanLab extends CI_Controller
             );
             $upload_image = $_FILES['bukti_pembayaran']['name'];
        if ($upload_image) {
-        $config['allowed_types'] = 'gif|jpg|png';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
         $config['max_sizes'] = '2048';
         $config['upload_path'] = './assets/img/peminjaman/';
         $this->load->library('upload', $config);
@@ -183,7 +183,7 @@ class PeminjamanLab extends CI_Controller
             ];
             $upload_image = $_FILES['bukti_pembayaran']['name'];
             if($upload_image){
-                $config['allowed_types']='gif|png|jpg';
+                $config['allowed_types']='gif|png|jpg|jpeg';
                 $config['max_sized']='2048';
                 $config['upload_path']='./assets/img/peminjaman';
                 $this->load->library('upload',$config);
@@ -297,7 +297,7 @@ Peminjaman Lab Berhasil Dihapus!</div>');
              // Handle file upload if there's any
              $upload_image = $_FILES['bukti_pembayaran']['name'];
              if ($upload_image) {
-             $config['allowed_types'] = 'gif|jpg|png';
+             $config['allowed_types'] = 'gif|jpg|png|jpeg';
              $config['max_sizes'] = '2048';
              $config['upload_path'] = './assets/img/peminjaman/';
              $this->load->library('upload', $config);

@@ -145,7 +145,7 @@ class LayananLab extends CI_Controller
 
         $upload_image = $_FILES['lampiran_sampel']['name'];
         if ($upload_image) {
-            $config['allowed_types'] = 'gif|jpg|png';
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
             $config['max_size'] = '2048';
             $config['upload_path'] = './assets/img/layanan/';
             $this->load->library('upload', $config);
@@ -160,7 +160,7 @@ class LayananLab extends CI_Controller
 
         $upload_image = $_FILES['tagihan']['name'];
         if ($upload_image) {
-            $config['allowed_types'] = 'gif|jpg|png';
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
             $config['max_size'] = '2048';
             $config['upload_path'] = './assets/img/layanan/';
             $this->load->library('upload', $config);
@@ -233,7 +233,7 @@ class LayananLab extends CI_Controller
             ];
             $upload_image = $_FILES['lampiran_sampel']['name'];
             if($upload_image){
-                $config['allowed_types']='gif|png|jpg';
+                $config['allowed_types']='gif|png|jpg|jpeg';
                 $config['max_sized']='2048';
                 $config['upload_path']='./assets/img/layanan';
                 $this->load->library('upload',$config);
@@ -250,7 +250,7 @@ class LayananLab extends CI_Controller
             }
             $upload_image = $_FILES['tagihan']['name'];
             if($upload_image){
-                $config['allowed_types']='gif|png|jpg';
+                $config['allowed_types']='gif|png|jpg|jpeg';
                 $config['max_sized']='2048';
                 $config['upload_path']='./assets/img/layanan';
                 $this->load->library('upload',$config);
@@ -359,7 +359,7 @@ class LayananLab extends CI_Controller
              // Handle file upload if there's any
              $upload_image = $_FILES['lampiran_sampel']['name'];
              if ($upload_image) {
-             $config['allowed_types'] = 'gif|jpg|png';
+             $config['allowed_types'] = 'gif|jpg|png|jpeg';
              $config['max_sizes'] = '2048';
              $config['upload_path'] = './assets/img/layanan/';
              $this->load->library('upload', $config);

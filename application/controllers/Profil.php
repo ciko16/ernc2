@@ -30,7 +30,7 @@ class Profil extends CI_Controller
         $user = $this->userrole->getBy();
         $old_image = $user['gambar']; // simpan nama file foto lama
         $config['upload_path'] = './assets/img/profile/';
-        $config['allowed_types'] = 'gif|jpg|png';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
         $config['max_size'] = 2048;
         $config['file_name'] = $user['id'];
 
