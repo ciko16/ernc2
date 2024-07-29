@@ -65,7 +65,7 @@
                         <i class="bi bi-lightbulb-fill" style="font-size: 3rem; color: #6c757d;"></i>
                     </div>
                     <h5 class="fw-bolder">Karakterisasi Sifat Elektrokimia</h5>
-                    <p class="text-muted">Layanan karakterisasi sifat elektrokimia seperti siklik voltametri (CV) dan galvanostatik charge-discharge (GCD).</p>
+                    <p class="text-muted">Layanan karakterisasi sifat elektrokimia seperti Cyclic Voltammetry (CV) dan Galvanostatic Charge-Discharge (GCD).</p>
                 </div>
             </div>
         </div>
