@@ -1,5 +1,5 @@
     <!-- Footer-->
-    <footer class="py-3" style="background-color: #69c96e80;">
+    <footer class="py-3" style="background: linear-gradient(90deg, #9cc545, #7bbd45);">
         <div class="container px-5"><p class="m-0 text-center footer-text">Copyright &copy;ERNC<sup>2</sup> 2024</p></div>
     </footer>
     <!-- Bootstrap core JS-->
