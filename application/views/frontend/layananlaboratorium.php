@@ -9,7 +9,7 @@
         <!-- Table -->
         <div class="table-responsive">
             <table class="table table-bordered">
-                <thead style="background-color: #69c96e80;">
+                <thead style="background-color: #E2DAD6;">
                     <tr>
                         <th scope="col">No.</th>
                         <th scope="col">Keperluan</th>
