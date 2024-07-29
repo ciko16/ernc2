@@ -94,7 +94,7 @@ public function tambah()
     public function hapus($id)
     {
         $this->Biaya_model->delete($id);
-        $this->session->set_flLayananashdata('message', '<div class="alert alert-success" role="alert">Data
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data
         Biaya Layanan Berhasil Dihapus!</div>');
         redirect('BiayaLayanan');
     }
