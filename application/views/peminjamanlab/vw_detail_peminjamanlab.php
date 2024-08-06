@@ -24,7 +24,7 @@
                     <div class="row mb-3">
                         <div class="col-md-4 font-weight-bold">Biaya</div>
                         <div class="col-md-2">:</div>
-                        <div class="col-md-6"><?= $peminjaman_lab['biaya']; ?></div>
+                        <div class="col-md-6"><?= 'Rp.' . number_format($peminjaman_lab['biaya'], 0, ',', '.'); ?></div>
                     </div>
 
                     <div class="row mb-3">
