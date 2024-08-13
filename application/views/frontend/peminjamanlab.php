@@ -100,3 +100,9 @@ $(document).ready(function() {
     }
 });
 </script>
+<!-- membuat input asal instansi menjadi huruf kapital -->
+<script> 
+    document.getElementById('asal_instansi').addEventListener('input', function() {
+        this.value = this.value.toUpperCase();
+    });
+</script>
