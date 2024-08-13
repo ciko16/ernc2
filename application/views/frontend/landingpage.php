@@ -82,30 +82,30 @@
             <!-- Video card 1-->
             <div class="col-lg-6 col-xl-4 mb-5">
                 <div class="card">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="100%" height="315" src="https://youtu.be/GthNTrb96F0?si=Ru6tC4ptyZvGEM5N" frameborder="0" allowfullscreen></iframe>
                     <div class="card-body">
-                        <h5 class="card-title">Video Title 1</h5>
-                        <p class="card-text">Description of the first video.</p>
+                        <h5 class="card-title">Pendahuluan Fisika Material</h5>
+                        <p class="card-text">Ini deskripsi dari video pendahuluan fisika material</p>
                     </div>
                 </div>
             </div>
             <!-- Video card 2-->
             <div class="col-lg-6 col-xl-4 mb-5">
                 <div class="card">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="100%" height="315" src="https://youtu.be/DvlRRK-8NjM?si=wPZ9oeM2pMRPhkpr" frameborder="0" allowfullscreen></iframe>
                     <div class="card-body">
-                        <h5 class="card-title">Video Title 2</h5>
-                        <p class="card-text">Description of the second video.</p>
+                        <h5 class="card-title">Pengukuhan Guru Besar</h5>
+                        <p class="card-text">Ini deskripsi dari video Guru Besar Prof Erman Taer, S.Si, M.Si</p>
                     </div>
                 </div>
             </div>
             <!-- Video card 3-->
             <div class="col-lg-6 col-xl-4">
                 <div class="card">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="100%" height="315" src="https://youtu.be/fjXPaxAnryk?si=qBaBIchOs1htZYmG" frameborder="0" allowfullscreen></iframe>
                     <div class="card-body">
-                        <h5 class="card-title">Video Title 3</h5>
-                        <p class="card-text">Description of the third video.</p>
+                        <h5 class="card-title">K3Lab Laboratorium Fisika Material</h5>
+                        <p class="card-text">Ini deskripsi dari video K3Lab Fisika Material</p>
                     </div>
                 </div>
             </div>
