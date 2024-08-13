@@ -59,10 +59,10 @@
                 <label for="no_whatsapp">Nomor Whatsapp</label>
             </div>
             <!-- Image upload input-->
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label for="bukti_pembayaran" class="form-label">Upload Bukti Pembayaran</label>
                 <input class="form-control" type="file" id="bukti_pembayaran" name="bukti_pembayaran" accept="image/*" required />
-            </div>
+            </div> -->
             <!-- Submit Button-->
                 <a href="<?= base_url('Home/layananlaboratorium');?>" class="btn btn-danger">Kembali</a>
                 <button class="btn btn-success float-right" type="submit">Submit</button>
