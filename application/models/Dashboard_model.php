@@ -32,10 +32,10 @@ class Dashboard_model extends CI_Model {
         return $query->result_array();
     }
 
-    public function getByMonth() { 
+    public function getByMonthYear() { 
         // mengekstrak bulan dari kolom tanggal dengan SQL MONTH()
-        $this->db->select('MONTH(tanggal) as bulan, COUNT(*) as jumlah');
-        $this->db->group_by('MONTH(tanggal)');
+        $this->db->select('YEAR(tanggal) as tahun, MONTH(tanggal) as bulan, COUNT(*) as jumlah');
+        $this->db->group_by('YEAR(tanggal), MONTH(tanggal)');
         $query = $this->db->get('kalenderbaru');
         return $query->result_array();
     }
