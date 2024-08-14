@@ -118,9 +118,7 @@
 
 <!-- Inisialisasi fungsi -->
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
             initializeChart(pendapatanLayananData, pendapatanPeminjamanData);
-        });
 </script>
 </body>
 </html>
