@@ -90,7 +90,7 @@
     </script>
 
     <!-- Script untuk inisialisasi chart -->
-    <script src="<?= base_url('assets/js/demo/chart-bar-demo.js')?>"></script>
+    <script src="<?= base_url('assets/js/demo/datakalender.js')?>"></script>
     <script>
         // Pastikan untuk memanggil fungsi initializeChart setelah file datakalender.js dimuat
         initializeChart(dataPerBulan);
