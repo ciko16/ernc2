@@ -11,6 +11,10 @@ function initializeChart(pendapatanLayanan, pendapatanPeminjaman) {
         var label = item.year + '-' + ('0' + item.month).slice(-2);
         labels.push(label);
         dataLayanan.push(item.total_pendapatan_layanan);
+
+        // Format angka menjadi Rupiah untuk log
+        var formattedLayanan = 'Rp ' + item.total_pendapatan_layanan.toLocaleString('id-ID');
+        console.log(`Pendapatan Layanan untuk ${label}: ${formattedLayanan}`);
     });
 
     pendapatanPeminjaman.forEach(function(item) {
@@ -19,6 +23,10 @@ function initializeChart(pendapatanLayanan, pendapatanPeminjaman) {
             labels.push(label);
         }
         dataPeminjaman.push(item.total_pendapatan_peminjaman);
+
+        // Format angka menjadi Rupiah untuk log
+        var formattedPeminjaman = 'Rp ' + item.total_pendapatan_peminjaman.toLocaleString('id-ID');
+        console.log(`Pendapatan Peminjaman untuk ${label}: ${formattedPeminjaman}`);
     });
 
     // Menghapus duplikasi label
@@ -27,7 +35,7 @@ function initializeChart(pendapatanLayanan, pendapatanPeminjaman) {
     console.log('Labels:', labels);
     console.log('Data Layanan:', dataLayanan);
     console.log('Data Peminjaman:', dataPeminjaman);
-
+    
     // Membuat grafik menggunakan Chart.js
     var ctx = document.getElementById('pendapatanChart').getContext('2d');
     var pendapatanChart = new Chart(ctx, {
