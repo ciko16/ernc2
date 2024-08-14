@@ -57,6 +57,24 @@ function initializeChart(pendapatanLayanan, pendapatanPeminjaman) {
             scales: {
                 y: {
                     beginAtZero: true,
+                    min: 0, // Menetapkan nilai minimum sumbu Y menjadi 0
+                    ticks: {
+                        stepSize: 1 // Mengatur langkah sumbu Y menjadi 1 agar menampilkan nilai integer
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            var datasetLabel = tooltipItem.dataset.label || '';
+                            return datasetLabel + ': ' + number_format(tooltipItem.raw);
+                        }
+                    }
                 }
             }
         }
