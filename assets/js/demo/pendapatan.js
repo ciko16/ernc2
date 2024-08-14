@@ -89,6 +89,7 @@ function initializeChart(pendapatanLayanan, pendapatanPeminjaman) {
                 y: {
                     beginAtZero: true,
                     ticks: {
+                        stepSize: 1, // menampilkan angka bulat saja
                         font: {
                             size: 10
                         }

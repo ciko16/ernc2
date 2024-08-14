@@ -60,6 +60,7 @@ function initializeChart(dataPerBulan) {
             y: {
                 beginAtZero: false,
                 ticks: {
+                    stepSize: 1, // menampilkan angka bulat saja
                     callback: function(value) {
                         return number_format(value);
                     }
