@@ -170,7 +170,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="chart-bar">
-                                        <canvas id="kalender"></canvas>
+                                        <canvas id="myBarChart"></canvas>
                                     </div>
                                     <hr>
                                     Grafik Data Kalender Agenda Lab
