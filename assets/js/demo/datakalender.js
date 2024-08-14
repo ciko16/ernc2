@@ -23,8 +23,8 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 function initializeChart(dataPerBulan) {
     console.log('dataPerBulan: ', dataPerBulan);
 
-    var ctx = document.getElementById("myBarChart");
-    var myBarChart = new Chart(ctx, {
+    var ctx = document.getElementById("kalender");
+    var kalender = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: dataPerBulan.labels,
