@@ -186,7 +186,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="chart-bar chart-container">
-                                    <canvas id="pendapatanChart" width="400" height="200"></canvas>
+                                    <canvas id="tes" width="400" height="200"></canvas>
                                     </div>
                                     <hr>
                                     Grafik Data Pendapatan
