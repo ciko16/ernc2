@@ -107,7 +107,7 @@ class PeminjamanLab extends CI_Controller
             $no_whatsapp = $this->input->post('no_whatsapp');
             $status_peminjaman = $this->input->post('status_peminjaman');
             $konfirmasi = $this->session->userdata('nama');
-            $created_date = time();
+            $created_date = date('Y-m-d', time());
 
             $data = array (
                 'nama' => $nama,
@@ -291,7 +291,7 @@ Peminjaman Lab Berhasil Dihapus!</div>');
                 'biaya' => str_replace(['Rp ', '.'], '', $this->input->post('biaya')), // menghapus format rupiah ketika input data
                 'no_whatsapp' => $this->input->post('no_whatsapp'),
                 'status_peminjaman' => 'Proses',
-                'created_date' => time()
+                'created_date' => date('Y-m-d', time())
             ];
 
              // Handle file upload if there's any
