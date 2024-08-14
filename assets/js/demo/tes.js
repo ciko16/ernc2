@@ -29,40 +29,43 @@ function initializeChart(pendapatanLayanan, pendapatanPeminjaman) {
     console.log('Data Peminjaman:', dataPeminjaman);
 
     // Membuat grafik menggunakan Chart.js
-var ctx = document.getElementById('pendapatanChart').getContext('2d');
-var pendapatanChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: labels,
-        datasets: [
-            {
-                label: 'Pendapatan Layanan',
-                data: dataLayanan,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1,
-                maxBarThickness: 50 // Setting maxBarThickness at dataset level
-            },
-            {
-                label: 'Pendapatan Peminjaman',
-                data: dataPeminjaman,
-                backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                borderColor: 'rgba(153, 102, 255, 1)',
-                borderWidth: 1,
-                maxBarThickness: 50 // Setting maxBarThickness at dataset level
-            }
-        ]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true,
-                min: 0, // Ensure Y-axis starts at 0
-                ticks: {
-                    stepSize: 1, // Ensure Y-axis shows integer steps
+    var ctx = document.getElementById('pendapatanChart').getContext('2d');
+    var pendapatanChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Pendapatan Layanan',
+                    data: dataLayanan,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    maxBarThickness: 50 // Setting maxBarThickness at dataset level
                 },
+                {
+                    label: 'Pendapatan Peminjaman',
+                    data: dataPeminjaman,
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1,
+                    maxBarThickness: 50 // Setting maxBarThickness at dataset level
+                }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    min: 0, // Ensure Y-axis starts at 0
+                    ticks: {
+                        stepSize: 1, // Ensure Y-axis shows integer steps
+                        callback: function(value, index, values) {
+                            return 'Rp ' + value.toLocaleString('id-ID'); // Format as Rupiah
+                        }
+                    }
+                }
             }
         }
-    }
-});
+    });
 }
