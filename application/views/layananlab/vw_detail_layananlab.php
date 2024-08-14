@@ -53,7 +53,7 @@
                             $wa_url = "https://wa.me/".$no_whatsapp;
                             ?>
                             <a href="<?= $wa_url; ?>" class="btn btn-success" target="_blank">
-                                <i class="fab fa-whatsapp"></i><?= $layanan_lab['no_whatsapp']; ?>
+                                <i class="fab fa-whatsapp"></i>&nbsp;<?= $layanan_lab['no_whatsapp']; ?>
                             </a>
                         <?php endif; ?>    
                     </div>
