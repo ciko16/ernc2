@@ -43,8 +43,8 @@ function initializeChart(pendapatanLayanan, pendapatanPeminjaman) {
     console.log('Data Peminjaman:', dataPeminjamanArray);
 
     // Membuat grafik menggunakan Chart.js
-    var ctx = document.getElementById('pendapatanChart').getContext('2d');
-    var pendapatanChart = new Chart(ctx, {
+    var ctx = document.getElementById('tes').getContext('2d');
+    var tes = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: labels,
