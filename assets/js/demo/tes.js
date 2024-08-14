@@ -24,8 +24,8 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 function initializeChart(pendapatanLayanan, pendapatanPeminjaman) {
     // Mengolah data untuk grafik
     var labels = [];
-    var dataLayanan = {};
-    var dataPeminjaman = {};
+    var dataLayanan = [];
+    var dataPeminjaman = [];
 
     console.log('Data Layanan:', pendapatanLayanan);
     console.log('Data Peminjaman:', pendapatanPeminjaman);
@@ -33,30 +33,23 @@ function initializeChart(pendapatanLayanan, pendapatanPeminjaman) {
     pendapatanLayanan.forEach(function(item) {
         var label = item.year + '-' + ('0' + item.month).slice(-2);
         labels.push(label);
-        dataLayanan[label] = item.total_pendapatan_layanan;
+        dataLayanan.push(item.total_pendapatan_layanan);
     });
 
     pendapatanPeminjaman.forEach(function(item) {
         var label = item.year + '-' + ('0' + item.month).slice(-2);
-        labels.push(label);
-        dataPeminjaman[label] = item.total_pendapatan_peminjaman;
+        if (!labels.includes(label)) {
+            labels.push(label);
+        }
+        dataPeminjaman.push(item.total_pendapatan_peminjaman);
     });
 
-    // Menghapus duplikasi label dan mengurutkannya
-    labels = [...new Set(labels)].sort();
-
-    // Menyelaraskan data dengan label yang unik dan terurut
-    var dataLayananArr = [];
-    var dataPeminjamanArr = [];
-
-    labels.forEach(function(label) {
-        dataLayananArr.push(dataLayanan[label] || 0);
-        dataPeminjamanArr.push(dataPeminjaman[label] || 0);
-    });
+    // Menghapus duplikasi label
+    labels = [...new Set(labels)];
 
     console.log('Labels:', labels);
-    console.log('Data Layanan:', dataLayananArr);
-    console.log('Data Peminjaman:', dataPeminjamanArr);
+    console.log('Data Layanan:', dataLayanan);
+    console.log('Data Peminjaman:', dataPeminjaman);
 
     // Membuat grafik menggunakan Chart.js
     var ctx = document.getElementById('pendapatanChart').getContext('2d');
@@ -67,56 +60,26 @@ function initializeChart(pendapatanLayanan, pendapatanPeminjaman) {
             datasets: [
                 {
                     label: 'Pendapatan Layanan',
-                    data: dataLayananArr,
+                    data: dataLayanan,
                     backgroundColor: 'rgba(75, 192, 192, 0.2)',
                     borderColor: 'rgba(75, 192, 192, 1)',
                     borderWidth: 1,
-                    maxBarThickness: 50
+                    maxBarThickness: 50 // Setting maxBarThickness at dataset level
                 },
                 {
                     label: 'Pendapatan Peminjaman',
-                    data: dataPeminjamanArr,
+                    data: dataPeminjaman,
                     backgroundColor: 'rgba(153, 102, 255, 0.2)',
                     borderColor: 'rgba(153, 102, 255, 1)',
                     borderWidth: 1,
-                    maxBarThickness: 50
+                    maxBarThickness: 50 // Setting maxBarThickness at dataset level
                 }
             ]
         },
         options: {
             scales: {
-                x: {
-                    beginAtZero: true,
-                    grid: {
-                        display: false
-                    }
-                },
                 y: {
-                    beginAtZero: true,
-                    ticks: {
-                        stepSize: 1, // Langkah pada sumbu y menjadi 1
-                        callback: function(value) {
-                            return Math.floor(value); // Pastikan nilai sumbu y selalu integer
-                        }
-                    },
-                    grid: {
-                        borderDash: [3],
-                        zeroLineBorderDash: [3]
-                    }
-                }
-            },
-            plugins: {
-                legend: {
-                    display: true,
-                    position: 'top'
-                },
-                tooltip: {
-                    callbacks: {
-                        label: function(tooltipItem) {
-                            var datasetLabel = tooltipItem.dataset.label || '';
-                            return datasetLabel + ': ' + number_format(tooltipItem.raw);
-                        }
-                    }
+                    beginAtZero: true
                 }
             }
         }
