@@ -58,7 +58,7 @@ function initializeChart(dataPerBulan) {
                 }
             },
             y: {
-                beginAtZero: true,
+                beginAtZero: false,
                 ticks: {
                     callback: function(value) {
                         return number_format(value);
