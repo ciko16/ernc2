@@ -56,10 +56,7 @@ function initializeChart(pendapatanLayanan, pendapatanPeminjaman) {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true,
-                    ticks: {
-                        stepSize: 1
-                    }
+                    beginAtZero: false,
                 }
             }
         }
