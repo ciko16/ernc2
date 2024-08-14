@@ -25,7 +25,7 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 function initializeChart(dataPerBulan) {
   console.log('dataPerBulan: ', dataPerBulan);
   
-  var ctx = document.getElementById("myBarChart").getContext('2d');
+  var ctx = document.getElementById("myBarChart");
   var myBarChart = new Chart(ctx, {
       type: 'bar',
       data: {
