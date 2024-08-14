@@ -36,12 +36,8 @@ class Dashboard extends CI_Controller {
         // format: "Month YYYY"
         foreach ($dataPerBulan as $row) {
             // buat objek DateTime dengan bulan dan tahun
-            $date = DateTime::createFromFormat('!m', $row['bulan']);
-            $date->setDate($row['tahun'], $row['bulan'], 1);
-
-            // format label untuk menampilkan bulan dan tahun
-            $labels[] = $date->format('F Y');
-            $jumlah_data[] = $row['jumlah'];
+            $labels = DateTime::createFromFormat('!m', $row['bulan'])->format('F') . ' ' . $row['tahun'];
+            $jumlah_data = $row['jumlah'];
         }
 
         $data['dataPerBulan'] = [

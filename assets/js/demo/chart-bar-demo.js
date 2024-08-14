@@ -23,89 +23,73 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 }
 
 function initializeChart(dataPerBulan) {
-  console.log('dataPerBulan: ', dataPerBulan);
-  
-  var ctx = document.getElementById("myBarChart");
-  var myBarChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-          labels: dataPerBulan.labels, // Gunakan labels dari dataPerBulan
-          datasets: [{
-              label: "Jumlah Data",
-              backgroundColor: "#c2e0c6 ",
-              hoverBackgroundColor: "#2e59d9",
-              borderColor: "#c2e0c6 ",
-              data: dataPerBulan.data, // Gunakan data dari dataPerBulan
-          }],
-      },
-      options: {
-          maintainAspectRatio: false,
-          layout: {
-              padding: {
-                  left: 10,
-                  right: 25,
-                  top: 25,
-                  bottom: 0
-              }
-          },
-          scales: {
-              xAxes: [{
-                type: 'time',
-                  time: {
-                      unit: 'month',
-                      tooltipFormat: 'MM YYYY', //format tooltip
-                      displayFormats: {
-                        month: 'MM YYYY' //Format label
-                      }
-                  },
-                  gridLines: {
-                      display: false,
-                      drawBorder: false
-                  },
-                  ticks: {
-                      maxTicksLimit: 12 // Menampilkan semua bulan
-                  },
-                  maxBarThickness: 25
-              }],
-              yAxes: [{
-                  ticks: {
-                      beginAtZero: true,
-                      padding: 10,
-                      callback: function(value, index, values) {
-                          return number_format(value);
-                      }
-                  },
-                  gridLines: {
-                      color: "rgb(234, 236, 244)",
-                      zeroLineColor: "rgb(234, 236, 244)",
-                      drawBorder: false,
-                      borderDash: [2],
-                      zeroLineBorderDash: [2]
-                  }
-              }],
-          },
-          legend: {
-              display: false
-          },
-          tooltips: {
-              titleMarginBottom: 10,
-              titleFontColor: '#6e707e',
-              titleFontSize: 14,
-              backgroundColor: "rgb(255,255,255)",
-              bodyFontColor: "#858796",
-              borderColor: '#dddfeb',
-              borderWidth: 1,
-              xPadding: 15,
-              yPadding: 15,
-              displayColors: false,
-              caretPadding: 10,
-              callbacks: {
-                  label: function(tooltipItem, chart) {
-                      var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-                      return datasetLabel + ': ' + number_format(tooltipItem.yLabel);
-                  }
-              }
-          },
-      }
-  });
+    console.log('dataPerBulan: ', dataPerBulan);
+    
+    var ctx = document.getElementById("myBarChart").getContext('2d');
+    var myBarChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: dataPerBulan.labels, // Label format: 'Month Year'
+            datasets: [{
+                label: "Jumlah Data",
+                backgroundColor: "#c2e0c6", // Pallete warna
+                hoverBackgroundColor: "#2e59d9",
+                borderColor: "#17a673",
+                data: dataPerBulan.data, // Data jumlah
+            }],
+        },
+        options: {
+            maintainAspectRatio: false,
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 25,
+                    top: 25,
+                    bottom: 0
+                }
+            },
+            scales: {
+                x: {
+                    type: 'category',
+                    labels: dataPerBulan.labels,
+                    ticks: {
+                        autoSkip: false,
+                        maxRotation: 45,
+                        minRotation: 0,
+                    },
+                    grid: {
+                        display: false,
+                    },
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        padding: 10,
+                        callback: function(value) {
+                            return number_format(value);
+                        }
+                    },
+                    grid: {
+                        color: "rgb(234, 236, 244)",
+                        zeroLineColor: "rgb(234, 236, 244)",
+                        drawBorder: false,
+                        borderDash: [2],
+                        zeroLineBorderDash: [2]
+                    }
+                },
+            },
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.dataset.label + ': ' + number_format(tooltipItem.raw);
+                        }
+                    }
+                }
+            }
+        }
+    });
 }

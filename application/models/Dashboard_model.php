@@ -35,8 +35,8 @@ class Dashboard_model extends CI_Model {
     public function getByMonthYear() { 
         // mengekstrak bulan dan tahun dari kolom tanggal dengan SQL MONTH() dan YEAR()
         $this->db->select('MONTH(tanggal) as bulan, YEAR(tanggal) as tahun, COUNT(*) as jumlah');
-        $this->db->group_by('YEAR(tanggal)','MONTH(tanggal)');
-        $this->db->order_by('YEAR(tanggal), MONTH(tanggal)'); // Mengurutkan data berdasarkan tahun dan bulan
+        $this->db->group_by('YEAR(tanggal)');
+        $this->db->group_by('MONTH(tanggal)'); // Mengurutkan data berdasarkan tahun dan bulan
         $query = $this->db->get('kalenderbaru');
         return $query->result_array();
     }
