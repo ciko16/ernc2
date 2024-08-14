@@ -80,6 +80,13 @@
                 ?>
                         <div class="col-md-6 <?= $status_class ?>"><?= $layanan_lab['status']; ?></div>
                     </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4 font-weight-bold">Tanggal Input</div>
+                        <div class="col-md-2">:</div>
+                        <div class="col-md-6 font-weight-bold"><?=date('d F Y', strtotime($layanan_lab['created_date'])); ?></div>
+                    </div>
+
                 </div>
                 <div class="card-footer justify-content-center">
                     <a href="<?= base_url('LayananLab') ?>" class="btn btn-danger">Tutup</a>
