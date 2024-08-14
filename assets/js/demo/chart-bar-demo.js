@@ -49,30 +49,47 @@ function initializeChart(dataPerBulan) {
               }
           },
           scales: {
-            x: {
-                grid: {
-                    display: false
+            xAxes: [{
+                time: {
+                    unit: 'month'
+                },
+                gridLines: {
+                    display: false,
+                    drawBorder: false
                 },
                 ticks: {
                     maxTicksLimit: 12
-                }
-            },
-            y: {
-                beginAtZero: true,
+                    // memanggil nama bulan yang telah disiapkan di const
+                    // callback: function(value, index, values) {
+                    //     return namaBulan[value - 1]; // -1 karena value dimulai dari 1 (Januari)
+                    // }
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Bulan' // label sumbu x
+                },
+                maxBarThickness: 25
+            }],
+            yAxes: [{
                 ticks: {
-                    stepSize: 1, // menampilkan angka bulat saja
-                    callback: function(value) {
+                    beginAtZero: true,
+                    padding: 10,
+                    callback: function(value, index, values) {
                         return number_format(value);
                     }
                 },
-                grid: {
+                gridLines: {
                     color: "rgb(234, 236, 244)",
                     zeroLineColor: "rgb(234, 236, 244)",
                     drawBorder: false,
                     borderDash: [2],
                     zeroLineBorderDash: [2]
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Jumlah Data'// label sumbu y
                 }
-            }
+            }],
         },
         plugins: {
             legend: {
