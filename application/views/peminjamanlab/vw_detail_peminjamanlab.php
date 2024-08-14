@@ -30,7 +30,22 @@
                     <div class="row mb-3">
                         <div class="col-md-4 font-weight-bold">Nomor Whatsapp</div>
                         <div class="col-md-2">:</div>
-                        <div class="col-md-6"><?= $peminjaman_lab['no_whatsapp']; ?></div>
+                        <!-- memberikan tombol mengarahkan ke whatsapp pelanggan -->
+                        <?php if(isset($peminjaman_lab['no_whatsapp']) && !empty($peminjaman_lab['no_whatsapp'])): ?>
+                            <?php
+                            $no_whatsapp = $peminjaman_lab['no_whatsapp'];
+                            $no_whatsapp = preg_replace('/[^0-9]/', '', $no_whatsapp);
+
+                            if (substr($no_whatsapp, 0, 1) == '0'){
+                                $no_whatsapp = '62' . substr($no_whatsapp, 1);
+                            }
+
+                            $wa_url = "https://wa.me/".$no_whatsapp;
+                            ?>
+                            <a href="<?= $wa_url; ?>" class="btn btn-success" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Hubungi via Whatsapp
+                            </a>
+                        <?php endif; ?>    
                     </div>
 
                     <div class="row mb-3">
