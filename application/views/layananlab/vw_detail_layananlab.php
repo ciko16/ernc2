@@ -49,7 +49,7 @@
                             $wa_url = "https://wa.me/".$no_whatsapp;
                             ?>
                             <a href="<?= $wa_url; ?>" class="btn btn-success" target="_blank">
-                                <i class="fas fa-whatsapp"></i> Hubungi via Whatsapp
+                                <i class="fab fa-whatsapp"></i> Hubungi via Whatsapp
                             </a>
                         <?php endif; ?>    
                     </div>
