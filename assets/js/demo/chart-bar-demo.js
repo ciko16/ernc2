@@ -1,3 +1,5 @@
+const { types } = require("node-sass");
+
 function number_format(number, decimals, dec_point, thousands_sep) {
   number = (number + '').replace(',', '').replace(' ', '');
   var n = !isFinite(+number) ? 0 : +number,
@@ -30,9 +32,9 @@ function initializeChart(dataPerBulan) {
           labels: dataPerBulan.labels, // Gunakan labels dari dataPerBulan
           datasets: [{
               label: "Jumlah Data",
-              backgroundColor: "#4e73df",
+              backgroundColor: "#c2e0c6 ",
               hoverBackgroundColor: "#2e59d9",
-              borderColor: "#4e73df",
+              borderColor: "#c2e0c6 ",
               data: dataPerBulan.data, // Gunakan data dari dataPerBulan
           }],
       },
@@ -48,8 +50,13 @@ function initializeChart(dataPerBulan) {
           },
           scales: {
               xAxes: [{
+                types: 'time',
                   time: {
-                      unit: 'month'
+                      unit: 'month',
+                      tooltipFormat: 'MM YYYY', //format tooltip
+                      displayFormats: {
+                        month: 'MM YYYY' //Format label
+                      }
                   },
                   gridLines: {
                       display: false,
