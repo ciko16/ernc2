@@ -114,7 +114,7 @@
 </script>
 
 <!-- Menyisipkan file pendapatan.js -->
-<script src="<?= base_url('assets/js/demo/datakalender.js') ?>"></script>      
+<script src="<?= base_url('assets/js/demo/pendapatan.js') ?>"></script>      
 
 <!-- Inisialisasi fungsi -->
 <script>
