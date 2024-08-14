@@ -27,14 +27,20 @@ class Dashboard extends CI_Controller {
         // Mengambil data inventaris berdasarkan ketersediaan
         $data['inventaris_by_ketersediaan'] = $this->Dashboard_model->get_inventaris_by_ketersediaan();
         
-        // Mengambil data jumlah berdasarkan bulan dari model
-        $dataPerBulan = $this->Dashboard_model->getByMonth();
+        // Mengambil data jumlah berdasarkan bulan dan tahun dari model
+        $dataPerBulan = $this->Dashboard_model->getByMonthYear();
 
         $labels = [];
         $jumlah_data = [];
 
+        // format: "Month YYYY"
         foreach ($dataPerBulan as $row) {
-            $labels[] = DateTime::createFromFormat('!m', $row['bulan'])->format('F');
+            // buat objek DateTime dengan bulan dan tahun
+            $date = DateTime::createFromFormat('!m', $row['bulan']);
+            $date->setDate($row['tahun'], $row['bulan'], 1);
+
+            // format label untuk menampilkan bulan dan tahun
+            $labels[] = $date->format('F Y');
             $jumlah_data[] = $row['jumlah'];
         }
 
