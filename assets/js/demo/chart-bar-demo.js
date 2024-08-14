@@ -58,7 +58,7 @@ function initializeChart(dataPerBulan) {
                 }
             },
             y: {
-                beginAtZero: false,
+                beginAtZero: true,
                 ticks: {
                     stepSize: 1, // menampilkan angka bulat saja
                     callback: function(value) {
