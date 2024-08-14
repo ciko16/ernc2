@@ -33,17 +33,21 @@
                         <!-- memberikan tombol mengarahkan ke whatsapp pelanggan -->
                         <?php if(isset($peminjaman_lab['no_whatsapp']) && !empty($peminjaman_lab['no_whatsapp'])): ?>
                             <?php
+                            // Ambil nomor WhatsApp dari database
                             $no_whatsapp = $peminjaman_lab['no_whatsapp'];
+                            // Bersihkan nomor dari spasi, tanda, atau karakter yang tidak diperlukan
                             $no_whatsapp = preg_replace('/[^0-9]/', '', $no_whatsapp);
 
+                             // Jika nomor dimulai dengan 0, ganti dengan kode negara (misal +62 untuk Indonesia)
                             if (substr($no_whatsapp, 0, 1) == '0'){
                                 $no_whatsapp = '62' . substr($no_whatsapp, 1);
                             }
 
+                            // URL Whatsapp
                             $wa_url = "https://wa.me/".$no_whatsapp;
                             ?>
                             <a href="<?= $wa_url; ?>" class="btn btn-success" target="_blank">
-                                <i class="fab fa-whatsapp"></i> Hubungi via Whatsapp
+                                <i class="fab fa-whatsapp"><?= $peminjaman_lab['no_whatsapp']; ?></i>
                             </a>
                         <?php endif; ?>    
                     </div>
