@@ -50,7 +50,7 @@ function initializeChart(dataPerBulan) {
           },
           scales: {
               xAxes: [{
-                types: 'time',
+                type: 'time',
                   time: {
                       unit: 'month',
                       tooltipFormat: 'MM YYYY', //format tooltip
