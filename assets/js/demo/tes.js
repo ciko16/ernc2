@@ -57,6 +57,7 @@ function initializeChart(pendapatanLayanan, pendapatanPeminjaman) {
             scales: {
                 yAxes: [{
                     ticks: {
+                        stepSize: 1,
                         beginAtZero: true,
                         padding: 10,
                         callback: function(value, index, values) {
