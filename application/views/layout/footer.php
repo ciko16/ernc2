@@ -89,6 +89,8 @@
         console.log('dataPerBulan: ', dataPerBulan); // Untuk memastikan variabel terisi dengan benar
     </script>
 
+    <!-- Script untuk inisialisasi chart -->
+    <script src="<?= base_url('assets/js/demo/datakalender.js')?>"></script>
     <script>
         // Pastikan untuk memanggil fungsi initializeChart setelah file datakalender.js dimuat
         initializeChart(dataPerBulan);
