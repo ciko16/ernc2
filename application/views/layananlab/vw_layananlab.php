@@ -56,6 +56,8 @@
                     $status_class = 'text-danger';
                 } elseif ($us['status'] == 'Selesai') {
                     $status_class = 'text-success';
+                } else {
+                  $status_class = 'text-warning';
                 }
                 ?>
                 <span class="<?= $status_class ?>"><?= $us['status']; ?></span>

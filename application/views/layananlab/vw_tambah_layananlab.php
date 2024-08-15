@@ -63,7 +63,7 @@ Form Tambah Data Layanan Lab
         <select name="status" class="form-control" id="status">
         <option value="" disabled selected>Pilih Status</option>
             <option value="Ditolak" <?= set_value('status') == 'Ditolak' ? 'selected' : '' ?>>Ditolak</option>
-            <option value="Proses" <?= set_value('status') == 'Proses' ? 'selected' : '' ?>>Proses</option>
+            <option value="Sedang Dikerjakan" <?= set_value('status') == 'Sedang Dikerjakan' ? 'selected' : '' ?>>Sedang Dikerjakan</option>
             <option value="Selesai" <?= set_value('status') == 'Selesai' ? 'selected' : '' ?>>Selesai</option> 
         </select>
         <?= form_error('status', '<small class="text-danger pl-3">', '</small>');?>

@@ -63,7 +63,7 @@ Form Edit Data Layanan Lab
     <div class="form-group">
     <select name="status" class="form-control" id="status">
         <option value="Ditolak" <?= $layanan_lab['status'] == 'Ditolak' ? 'selected' : '' ?>>Ditolak</option>
-        <option value="Proses" <?= $layanan_lab['status'] == 'Proses' ? 'selected' : '' ?>>Proses</option>
+        <option value="Sedang Dikerjakan" <?= $layanan_lab['status'] == 'Sedang Dikerjakan' ? 'selected' : '' ?>>Sedang Dikerjakan</option>
         <option value="Selesai" <?= $layanan_lab['status'] == 'Selesai' ? 'selected' : '' ?>>Selesai</option> 
     </select>
     </div>

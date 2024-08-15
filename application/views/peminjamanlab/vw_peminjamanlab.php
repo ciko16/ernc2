@@ -62,6 +62,8 @@
                     $status_class = 'text-danger';
                 } elseif ($us['status_peminjaman'] == 'Selesai') {
                     $status_class = 'text-success';
+                } else {
+                  $status_class = 'text-warning';
                 }
                 ?>
                 <span class="<?= $status_class ?>"><?= $us['status_peminjaman']; ?></span>
