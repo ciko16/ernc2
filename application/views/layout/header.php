@@ -132,6 +132,11 @@
             .rounded-table tbody tr:last-child td:last-child {
                 border-bottom-right-radius: 15px;
             }
+            .status-column {
+                white-space: nowrap;
+                overflow: visible;
+                text-overflow: clip;
+            }
     </style>
 </head>
 

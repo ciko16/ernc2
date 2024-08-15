@@ -54,7 +54,7 @@
                   <span>Tidak ada file bukti pembayaran</span>
                 <?php endif; ?>   -->
               <!-- </td> -->
-        <td>
+        <td class="status-column">
                 <!-- memberikan warna pada kondisi status tertentu -->
                 <?php 
                 $status_class = '';
