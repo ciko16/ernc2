@@ -49,9 +49,9 @@ Form Edit Data Peminjaman Lab
     </div>
     <div class="form-group">
     <select name="status_peminjaman" class="form-control" id="status_peminjaman">
-        <option value="Ditolak" <?= $peminjaman_lab['status_peminjaman'] === 'Ditolak' ? 'selected' : '' ?>>Ditolak</option>
-        <option value="Sedang Dikerjakan" <?= $peminjaman_lab['status_peminjaman'] === 'Sedang Dikerjakan' ? 'selected' : '' ?>>Sedang Dikerjakan</option>
-        <option value="Selesai" <?= $peminjaman_lab['status_peminjaman'] === 'Selesai' ? 'selected' : '' ?>>Selesai</option> 
+        <option value="Ditolak" <?= $peminjaman_lab['status_peminjaman'] == 'Ditolak' ? 'selected' : '' ?>>Ditolak</option>
+        <option value="Sedang Dikerjakan" <?= $peminjaman_lab['status_peminjaman'] == 'SedangDikerjakan' ? 'selected' : '' ?>>Sedang Dikerjakan</option>
+        <option value="Selesai" <?= $peminjaman_lab['status_peminjaman'] == 'Selesai' ? 'selected' : '' ?>>Selesai</option> 
     </select>
     </div>
     <a href="<?= base_url('PeminjamanLab') ?>" class="btn btn-danger">Tutup</a>
