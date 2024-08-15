@@ -290,7 +290,7 @@ Peminjaman Lab Berhasil Dihapus!</div>');
                 'keperluan' => $this->input->post('keperluan'),
                 'biaya' => str_replace(['Rp ', '.'], '', $this->input->post('biaya')), // menghapus format rupiah ketika input data
                 'no_whatsapp' => $this->input->post('no_whatsapp'),
-                'status_peminjaman' => 'Sedang Dikerjakan',
+                'status_peminjaman' => 'Sedang Meminjam',
                 'created_date' => date('Y-m-d', time())
             ];
 
