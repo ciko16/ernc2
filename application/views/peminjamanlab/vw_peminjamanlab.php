@@ -29,7 +29,7 @@
             <td>Biaya</td>
             <td>No Whatsapp</td>
             <!-- <td>Bukti Pembayaran</td> -->
-            <td>Status</td>
+            <td>Status Peminjaman</td>
             <td>Dikonfirmasi Oleh</td>
             <td>Aksi</td>
         </tr>
