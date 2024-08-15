@@ -10,7 +10,7 @@
             color: green;
         }
         .status-proses {
-            color: gray;
+            color: #ffdb58;
         }
         .ketersediaan-tersedia {
             color: green;
