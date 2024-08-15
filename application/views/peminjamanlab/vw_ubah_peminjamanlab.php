@@ -50,7 +50,7 @@ Form Edit Data Peminjaman Lab
     <div class="form-group">
     <select name="status_peminjaman" class="form-control" id="status_peminjaman">
         <option value="Ditolak" <?= $peminjaman_lab['status_peminjaman'] == 'Ditolak' ? 'selected' : '' ?>>Ditolak</option>
-        <option value="Sedang Meminjam" <?= $peminjaman_lab['status_peminjaman'] == 'Sedang Meminjam' ? 'selected' : '' ?>>Sedang Meminjam</option>
+        <option value="Meminjam" <?= $peminjaman_lab['status_peminjaman'] == 'Meminjam' ? 'selected' : '' ?>>Meminjam</option>
         <option value="Selesai" <?= $peminjaman_lab['status_peminjaman'] == 'Selesai' ? 'selected' : '' ?>>Selesai</option> 
     </select>
     </div>

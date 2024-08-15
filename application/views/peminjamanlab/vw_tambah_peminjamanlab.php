@@ -53,7 +53,7 @@ Form Tambah Data Peminjaman Lab
         <select name="status_peminjaman" class="form-control" id="status_peminjaman">
         <option value="" disabled selected>Pilih Status Peminjaman</option>
             <option value="Ditolak" <?= set_value('status_peminjaman') == 'Ditolak' ? 'selected' : '' ?>>Ditolak</option>
-            <option value="Sedang Meminjam" <?= set_value('status_peminjaman') == 'Sedang Meminjam' ? 'selected' : '' ?>>Sedang Meminjam</option>
+            <option value="Meminjam" <?= set_value('status_peminjaman') == 'Meminjam' ? 'selected' : '' ?>>Meminjam</option>
             <option value="Selesai" <?= set_value('status_peminjaman') == 'Selesai' ? 'selected' : '' ?>>Selesai</option> 
         </select>
         <?= form_error('status_peminjaman', '<small class="text-danger pl-3">', '</small>');?>
