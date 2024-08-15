@@ -14,7 +14,7 @@ layananLabData.forEach(function(status) {
     } else if (status.status === 'Ditolak') {
         backgroundColors.push('#ff2400');
     } else {
-        backgroundColors.push('#c5c6d0');
+        backgroundColors.push('#ffdb58');
     }
 });
 

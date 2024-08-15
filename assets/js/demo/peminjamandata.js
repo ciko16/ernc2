@@ -14,7 +14,7 @@ peminjamanData.forEach(function(status_peminjaman) {
     } else if (status_peminjaman.status_peminjaman === 'Ditolak') {
         backgroundColors.push('#ff2400');
     } else {
-        backgroundColors.push('#c5c6d0');
+        backgroundColors.push('#ffdb58');
     }
 });
 
