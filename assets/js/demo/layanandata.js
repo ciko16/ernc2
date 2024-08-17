@@ -14,14 +14,15 @@ layananLabData.forEach(function(status) {
     } else if (status.status === 'Ditolak') {
         backgroundColors.push('#ff2400');
     } else {
+        console.log('Status lain:', status.status, 'Warna:', 'ffdb58');
         backgroundColors.push('#ffdb58');
     }
 });
 
 // Pastikan elemen canvas ada
-var ctx = document.getElementById("layanan");
+var ctx = document.getElementById("myPieChart");
 if (ctx) {
-    var layanan = new Chart(ctx, {
+    var myPieChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: labels,
