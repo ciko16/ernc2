@@ -7,13 +7,7 @@ class Profil extends CI_Controller
     {
         parent::__construct();
         $this->load->model('User_model','userrole');
-        $this->load->library('upload','session');
-
-        // Cek apakah sesi sudah habis
-        if (!$this->session->userdata('logged_in')) {
-            // Redirect ke halaman login
-            redirect('Auth');
-        }
+        $this->load->library('upload');
     }
     public function index()
     {

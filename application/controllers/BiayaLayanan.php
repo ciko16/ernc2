@@ -8,12 +8,6 @@ public function __construct()
     parent::__construct();
     $this->load->model('Biaya_model');
     $this->load->library('pagination', 'session');
-
-    // Cek apakah sesi sudah habis
-    if (!$this->session->userdata('logged_in')) {
-        // Redirect ke halaman login
-        redirect('Auth');
-    }
 }
 public function index()
 {

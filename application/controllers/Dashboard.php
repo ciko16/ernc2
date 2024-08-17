@@ -8,12 +8,6 @@ class Dashboard extends CI_Controller {
         parent::__construct();
         $this->load->library('session');
         $this->load->model('Dashboard_model');
-
-        // Cek apakah sesi sudah habis
-        if (!$this->session->userdata('logged_in')) {
-            // Redirect ke halaman login
-            redirect('Auth');
-        }
     }
 
     public function index()

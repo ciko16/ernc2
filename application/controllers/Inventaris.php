@@ -7,13 +7,7 @@ class Inventaris extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Inventaris_model');
-        $this->load->library('pagination', 'session');
-
-        // Cek apakah sesi sudah habis
-        if (!$this->session->userdata('logged_in')) {
-            // Redirect ke halaman login
-            redirect('Auth');
-        }
+        $this->load->library('pagination');
     }
 
     public function index()

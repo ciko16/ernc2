@@ -9,12 +9,6 @@ class LayananLab extends CI_Controller
         $this->load->model('Layanan_model');
         $this->load->library('pagination');
         $this->load->library('session');
-
-        // Cek apakah sesi sudah habis
-        if (!$this->session->userdata('logged_in')) {
-            // Redirect ke halaman login
-            redirect('Auth');
-        }
     }
 
     public function index()
