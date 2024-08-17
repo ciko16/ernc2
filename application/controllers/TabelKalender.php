@@ -7,7 +7,6 @@ class TabelKalender extends CI_Controller
     {
         parent::__construct();
         $this->load->model('TabelKalender_model');
-        $this->load->model('Inventaris_model');
         $this->load->library('pagination');
     }
 
