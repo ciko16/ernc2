@@ -120,5 +120,7 @@
 <script>
             initializeChart(pendapatanLayananData, pendapatanPeminjamanData);
 </script>
+<!-- idle logout lebih dari 10 menit -->
+ <script src="<?= base_url('assets/js/idle-logout.js'); ?>"></script>
 </body>
 </html>
