@@ -104,7 +104,7 @@
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="chart-pie pt-4">
-                                        <canvas id="myPieChart"></canvas>
+                                        <canvas id="layanan"></canvas>
                                     </div>
                                     <hr>
                                     <?php foreach ($layanan_lab_by_status as $status): ?>

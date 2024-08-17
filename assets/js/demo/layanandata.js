@@ -19,9 +19,9 @@ layananLabData.forEach(function(status) {
 });
 
 // Pastikan elemen canvas ada
-var ctx = document.getElementById("myPieChart");
+var ctx = document.getElementById("layanan");
 if (ctx) {
-    var myPieChart = new Chart(ctx, {
+    var layanan = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: labels,
