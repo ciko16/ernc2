@@ -39,7 +39,7 @@ class Home extends CI_Controller {
   }
 
   public function galeri() {
-    
+
     $galeri = $this->Galeri_model->get();
     // tentukan jumlah gambar per halaman
   $limit = 6;
@@ -61,7 +61,7 @@ class Home extends CI_Controller {
 
   // kirim data ke view
   $data['galeri'] = $current_page_galeri;
-  $data['total_page'] = $total_pages;
+  $data['total_pages'] = $total_pages;
   $data['current_page'] = $page;
 
   // load view
