@@ -35,7 +35,7 @@
 
           <?php for ($i = 1; $i <= $total_pages; $i++): ?>
             <li class="page-item <?= ($i == $current_page) ? 'active' : ''; ?>">
-              <a class="page-link" href="?=<?= $i; ?>"><?= $i; ?></a>
+              <a class="page-link" href="?page=<?= $i; ?>"><?= $i; ?></a>
             </li>
             <?php endfor; ?>
 
