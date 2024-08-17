@@ -1,6 +1,6 @@
 var idleTime = 0;
 $(document).ready(function(){
-    var idleInterval = setInterval(timerIncrement, 600); // 10 menit
+    var idleInterval = setInterval(timerIncrement, 6000); // 10 menit
 
     $(this).mousemove(function (e) {
         idleTime = 0;
@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 function timerIncrement() {
     idleTime++;
-    if (idleTime > 9) { // 10 menit
-        window.location.href = "<?= base_url('Auth'); ?>";
+    if (idleTime > 10) { // 10 menit
+        window.location.href = "<?= base_url('Auth/index'); ?>";
     }
 }
