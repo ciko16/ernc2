@@ -64,24 +64,5 @@ $(document).ready(function() {
     });
 });
 </script>
-<!-- script datatables untuk galeri -->
-<script>
-$(document).ready(function() {
-    $('#galeriTable').DataTable({
-        "paging": true,            // Mengaktifkan pagination
-        "pageLength": 6,           // Jumlah gambar per halaman
-        "searching": false,        // Matikan fitur pencarian
-        "ordering": false,         // Matikan fitur pengurutan
-        "info": false,             // Sembunyikan informasi "Showing 1 to x of y entries"
-        "lengthChange": false,     // Matikan opsi untuk mengubah jumlah entri per halaman
-        "language": {
-            "paginate": {
-                "previous": "Sebelumnya",
-                "next": "Selanjutnya"
-            }
-        }
-    });
-});
-</script>
 </body>
 </html>

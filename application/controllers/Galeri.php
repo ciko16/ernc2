@@ -204,5 +204,36 @@ class Galeri extends CI_Controller
         $this->load->view("galeri/vw_galeri", $data);
         $this->load->view("layout/footer"); 
     }
+    public function webprofil() {
+        $this->load->model('Galeri_model');
+
+        $galeri = $this->Galeri_model->get_all_galeri();
+
+        // tentukan jumlah gambar per halaman
+        $limit = 6;
+
+        // dapatkan halaman saat ini dari URL, default ke halaman 1 jika tidak ada
+        $page = $this->input->get('page') ? $this->input->get('page') : 1;
+
+        // hitung offset data berdasarkan halaman saat ini
+        $offset = ($page -1) * $limit;
+
+        // ambil total jumlah gambar
+        $total_data = count($galeri);
+
+        // hitung total halaman yang tersedia
+        $total_pages = ceil($total_data / $limit);
+
+        // ambil data galeri untuk halaman saat ini
+        $current_page_galeri = array_slice($galeri, $offset, $limit);
+
+        // kirim data ke view
+        $data['galeri'] = $current_page_galeri;
+        $data['total_page'] = $total_pages;
+        $data['current_page'] = $page;
+
+        // load view
+        $this->load->view('frontend/galeri', $data);
+    }
 }
 ?>
