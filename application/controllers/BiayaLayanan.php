@@ -12,7 +12,7 @@ public function __construct()
     // Cek apakah sesi sudah habis
     if (!$this->session->userdata('logged_in')) {
         // Redirect ke halaman login
-        redirect('auth/login');
+        redirect('Auth');
     }
 }
 public function index()

@@ -12,7 +12,7 @@ class TabelKalender extends CI_Controller
         // Cek apakah sesi sudah habis
         if (!$this->session->userdata('logged_in')) {
             // Redirect ke halaman login
-            redirect('auth/login');
+            redirect('Auth');
         }
     }
 
