@@ -24,6 +24,7 @@
         <tr>
             <td>No</td>
             <td>Tanggal</td>
+            <td>Booking</td>
             <td>Deskripsi</td>
             <td>Aksi</td>
         </tr>
@@ -34,6 +35,7 @@
     <tr>
         <td> <?= $i ?>.</td>
         <td><?= $kb['tanggal']; ?></td>
+        <td><?= $kb['booking']; ?></td>
         <td><?= $kb['isi']; ?></td>
         <td>
             <!-- <a href="<?= base_url('TabelKalender/detail/'.$kb['id']);?>" class="badge badge-info">Detail</a> -->
