@@ -24,7 +24,7 @@
 
     <!-- Pagination -->
      <nav aria-label="Galeri pagination">
-      <ul class="pagination justify-content-center">
+      <ul class="pagination-green justify-content-center">
         <?php if ($current_page > 1) :?>
           <li class="page-item">
             <a class="page-link" href="?page=<?= $current_page - 1; ?>" aria-label="Sebelumnya">

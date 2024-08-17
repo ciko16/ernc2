@@ -55,8 +55,5 @@ class Galeri_model extends CI_Model {
         $this->db->or_like('deskripsi', $keyword);
         return $this->db->get('galeri')->num_rows();
     }
-    public function get_all_galeri() {
-        return $this->db->get('galeri')->result_array();
-    }
 }
 ?>
