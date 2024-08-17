@@ -40,9 +40,34 @@ class Home extends CI_Controller {
 
   public function galeri() {
     $data['galeri'] = $this->Galeri_model->get();
-    $this->load->view("frontend/header");
-    $this->load->view("frontend/galeri", $data);
-    $this->load->view("frontend/footer");
+    
+    // tentukan jumlah gambar per halaman
+  $limit = 6;
+
+  // dapatkan halaman saat ini dari URL, default ke halaman 1 jika tidak ada
+  $page = $this->input->get('page') ? $this->input->get('page') : 1;
+
+  // hitung offset data berdasarkan halaman saat ini
+  $offset = ($page -1) * $limit;
+
+  // ambil total jumlah gambar
+  $total_data = count($data);
+
+  // hitung total halaman yang tersedia
+  $total_pages = ceil($total_data / $limit);
+
+  // ambil data galeri untuk halaman saat ini
+  $current_page_galeri = array_slice($data, $offset, $limit);
+
+  // kirim data ke view
+  $data['galeri'] = $current_page_galeri;
+  $data['total_page'] = $total_pages;
+  $data['current_page'] = $page;
+
+  // load view
+  $this->load->view("frontend/header");
+  $this->load->view('frontend/galeri', $data);
+  $this->load->view("frontend/footer");
   }
 
   public function tentangkami() {
@@ -64,5 +89,12 @@ class Home extends CI_Controller {
     $this->load->view('frontend/header');
     $this->load->view('jadwalkalender/kalender', $data);
     $this->load->view('frontend/footer');
+}
+public function webprofil() {
+  $this->load->model('Galeri_model');
+
+  
+
+  
 }
 }
