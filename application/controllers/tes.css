@@ -14,3 +14,40 @@
     border-color: #6fa940; /* Warna border untuk hover */
     color: whitesmoke !important; /* Warna teks */
 }
+/* Styling untuk pagination */
+.pagination-green {
+    display: flex; /* Menjaga pagination dalam baris yang sama */
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.pagination-green .page-item {
+    margin: 0 2px; /* Jarak antara tombol pagination */
+}
+
+.pagination-green .page-link {
+    display: block;
+    padding: 0.5rem 0.75rem; /* Atur ukuran tombol */
+    font-size: 1rem; /* Ukuran font tombol */
+    line-height: 1.25;
+    text-align: center;
+    vertical-align: middle;
+    background-color: wheat; /* Warna latar belakang */
+    color: whitesmoke !important; /* Warna teks */
+    border: 1px solid #ddd; /* Border tombol */
+    border-radius: 0.25rem; /* Radius border */
+    text-decoration: none; /* Hapus underline */
+}
+
+.pagination-green .page-item.active .page-link {
+    background-color: #87b753; /* Warna latar belakang untuk tombol aktif */
+    border-color: #87b753; /* Warna border untuk tombol aktif */
+    color: whitesmoke !important; /* Warna teks untuk tombol aktif */
+}
+
+.pagination-green .page-link:hover {
+    background-color: #f8a217; /* Warna latar belakang saat hover */
+    border-color: #6fa940; /* Warna border saat hover */
+    color: whitesmoke !important; /* Warna teks saat hover */
+}
