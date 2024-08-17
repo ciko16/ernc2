@@ -141,6 +141,41 @@
         background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background if needed */
     }
     </style>
+
+<style>
+/* Warna umum untuk tombol pagination */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: #ffffff !important; /* Warna teks putih */
+    background-color: #28a745 !important; /* Warna latar belakang hijau */
+    border: 1px solid #28a745 !important; /* Warna border hijau */
+    padding: 5px 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    border-radius: 3px;
+}
+
+/* Warna tombol saat dihover */
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: #ffffff !important;
+    background-color: #218838 !important; /* Warna latar belakang hijau lebih gelap saat dihover */
+    border: 1px solid #218838 !important;
+}
+
+/* Warna tombol aktif */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    color: #ffffff !important; /* Warna teks putih pada tombol aktif */
+    background-color: #1e7e34 !important; /* Warna latar belakang hijau lebih gelap untuk tombol aktif */
+    border: 1px solid #1e7e34 !important; /* Warna border hijau lebih gelap untuk tombol aktif */
+}
+
+/* Warna tombol yang dinonaktifkan (misal Previous/Next di halaman awal/akhir) */
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+    color: #6c757d !important;
+    background-color: #e9ecef !important;
+    border: 1px solid #dee2e6 !important;
+}
+</style>
+
 </head>
 <body>
     <!-- Responsive navbar-->
