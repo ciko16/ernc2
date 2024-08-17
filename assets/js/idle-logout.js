@@ -16,6 +16,6 @@ $(document).ready(function(){
 function timerIncrement() {
     idleTime++;
     if (idleTime > 10) { // 10 menit
-        window.location.href = "<?= base_url('Auth/logout'); ?>"; // Redirect ke URL logout
+        window.location.href = "http://labernc2.pocari.id/admin"; // Redirect ke URL logout
     }
 }
