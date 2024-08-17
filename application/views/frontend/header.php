@@ -17,6 +17,9 @@
     <link href="<?= base_url('/frontend/css/lightbox.css')?> " rel="stylesheet">
     <!-- FontAwesome CSS -->
     <link href="<?= base_url('assets/vendor/fontawesome-free/css/all.min.css')?> " rel="stylesheet" type="text/css">
+    <!-- Jquery dataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
     <style>
         .header-container {
             position: relative;

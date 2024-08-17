@@ -11,9 +11,12 @@
     <!-- Lightbox Javascripts -->
     <script src="<?= base_url('frontend/js/lightbox.js')?>"></script>
     <!-- Bootstrap Bundle with Popper -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
-<!-- Button Kembali ke Atas -->
-<button onclick="topFunction()" id="kembalikeatas" title="Kembali ke Atas">↑</button>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Jquery dataTables js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <!-- Button Kembali ke Atas -->
+    <button onclick="topFunction()" id="kembalikeatas" title="Kembali ke Atas">↑</button>
 <!-- Lightbox JS -->
 <script>
     // Get the button
@@ -43,5 +46,23 @@
     </script>
     <!-- script untuk carousel -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<!-- script datatables pagination -->
+<script>
+$(document).ready(function() {
+    $('#biayaLayananTable').DataTable({
+        "pageLength": 5,
+        "lengthChange": false,
+        "searching": false, // Optional: Nonaktifkan pencarian jika tidak diperlukan
+        "ordering": false, // Optional: Nonaktifkan pengurutan jika tidak diperlukan
+        "info": false, // Optional: Nonaktifkan informasi jumlah total data
+        "language": {
+            "paginate": {
+                "previous": "Sebelumnya",
+                "next": "Selanjutnya"
+            }
+        }
+    });
+});
+</script>
 </body>
 </html>
