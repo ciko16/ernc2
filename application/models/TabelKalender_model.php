@@ -99,5 +99,10 @@ class TabelKalender_model extends CI_Model
         $query = $this->db->get();
         return $query->num_rows();
     }
+    public function getInventaris()
+    {
+        $query = $this->db->get('Inventaris');
+        return $query->result_array();
+    }
 }
 ?>
