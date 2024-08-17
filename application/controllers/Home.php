@@ -40,7 +40,7 @@ class Home extends CI_Controller {
 
   public function galeri() {
     $data['galeri'] = $this->Galeri_model->get();
-    
+    $galeri = $this->Galeri_model->get_all_galeri();
     // tentukan jumlah gambar per halaman
   $limit = 6;
 
@@ -51,13 +51,13 @@ class Home extends CI_Controller {
   $offset = ($page -1) * $limit;
 
   // ambil total jumlah gambar
-  $total_data = count($data);
+  $total_data = count($galeri);
 
   // hitung total halaman yang tersedia
   $total_pages = ceil($total_data / $limit);
 
   // ambil data galeri untuk halaman saat ini
-  $current_page_galeri = array_slice($data, $offset, $limit);
+  $current_page_galeri = array_slice($galeri, $offset, $limit);
 
   // kirim data ke view
   $data['galeri'] = $current_page_galeri;
@@ -93,7 +93,7 @@ class Home extends CI_Controller {
 public function webprofil() {
   $this->load->model('Galeri_model');
 
-  
+  $galeri = $this->Galeri_model->get_all_galeri();
 
   
 }
