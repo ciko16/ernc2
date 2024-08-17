@@ -30,46 +30,46 @@
             font-size: 14px;
         }
         .sidebar .fas.fa-user {
-            color: #C7C8CC !important;
+            color: #2B2D2F !important;
             font-size: 14px;
         }
         .sidebar .fas.fa-info {
-            color: #C7C8CC !important;
+            color: #2B2D2F !important;
             font-size: 14px;
         }
         .sidebar .fas.fa-image {
-            color: #C7C8CC !important;
+            color: #2B2D2F !important;
             font-size: 14px;
         }
         .sidebar .fas.fa-calendar {
-            color: #C7C8CC !important;
+            color: #2B2D2F !important;
             font-size: 14px;
         }
         .sidebar .fas.fa-boxes {
-            color: #C7C8CC !important;
+            color: #2B2D2F !important;
             font-size: 14px;
         }
         .sidebar .fas.fa-money-bill {
-            color: #C7C8CC !important;
+            color: #2B2D2F !important;
             font-size: 14px;
         }
         .sidebar .fas.fa-clipboard-list {
-            color: #C7C8CC !important;
+            color: #2B2D2F !important;
             font-size: 14px;
         }
         .sidebar .fas.fa-flask {
-            color: #C7C8CC !important;
+            color: #2B2D2F !important;
             font-size: 14px;
         }
         .sidebar .fas.fa-tachometer-alt {
-        color: #C7C8CC !important;
+        color: #2B2D2F !important;
         font-size: 14px;
         }
         .sidebar-heading {
-        color: #C7C8CC !important;
+        color: #2B2D2F !important;
         }
         .navbar-nav .nav-link {
-        color: #C7C8CC !important;
+        color: #2B2D2F !important;
         }
         .navbar-nav.bg-gradient-primary {
         background-color: #87b753 !important;
@@ -77,7 +77,7 @@
         font-size: 14px;
         }
         .sidebar-brand-text {
-            color: #C7C8CC !important;
+            color: #2B2D2F !important;
         }
         #sidebarToggle i {
             color: black;
