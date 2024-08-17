@@ -39,8 +39,8 @@ class Home extends CI_Controller {
   }
 
   public function galeri() {
-    $this->load->model('Galeri_model');
-    $galeri = $this->Galeri_model->get_all_galeri();
+    
+    $galeri = $this->Galeri_model->get();
     // tentukan jumlah gambar per halaman
   $limit = 6;
 
