@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class BiayaLayanan extends CI_Controller
+class BiayaLayanan extends Admin_Controller
 {
 public function __construct()
 {

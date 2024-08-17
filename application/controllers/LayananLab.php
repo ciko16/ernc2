@@ -1,7 +1,7 @@
 <?php
 defined ('BASEPATH') or exit ('No direct script access allowed');
 
-class LayananLab extends CI_Controller
+class LayananLab extends Admin_Controller
 {
     public function __construct()
     {
