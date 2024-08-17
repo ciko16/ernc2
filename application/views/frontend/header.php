@@ -170,7 +170,7 @@
 
 /* Warna tombol yang dinonaktifkan (misal Previous/Next di halaman awal/akhir) */
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
-    color: #6c757d !important;
+    color: #218838 !important;
     background-color: #e9ecef !important;
     border: 1px solid #dee2e6 !important;
 }
