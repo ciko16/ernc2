@@ -100,18 +100,9 @@ class TabelKalender_model extends CI_Model
         return $query->num_rows();
     }
     public function getInventaris()
-{
-    $query = $this->db->get('Inventaris');
-
-    if ($query === false) {
-        // Menampilkan pesan error jika query gagal
-        $error = $this->db->error(); // Get the error details
-        log_message('error', 'Database error: ' . $error['message']); // Log the error message
-        return []; // Kembalikan array kosong jika terjadi error
+    {
+        $query = $this->db->get('Inventaris');
+        return $query->result_array();
     }
-
-    return $query->result_array();
-}
-
 }
 ?>
