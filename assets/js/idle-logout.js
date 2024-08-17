@@ -1,6 +1,6 @@
 var idleTime = 0;
 $(document).ready(function(){
-    var idleInterval = setInterval(timerIncrement, 6000); // 10 menit
+    var idleInterval = setInterval(timerIncrement, 600); // 10 menit
 
     $(this).mousemove(function (e) {
         idleTime = 0;
