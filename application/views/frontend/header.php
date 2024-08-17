@@ -163,7 +163,7 @@
 
 /* Warna tombol aktif */
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {
-    color: #ffffff !important; /* Warna teks putih pada tombol aktif */
+    color: #218838 !important; /* Warna teks putih pada tombol aktif */
     background-color: #1e7e34 !important; /* Warna latar belakang hijau lebih gelap untuk tombol aktif */
     border: 1px solid #1e7e34 !important; /* Warna border hijau lebih gelap untuk tombol aktif */
 }
