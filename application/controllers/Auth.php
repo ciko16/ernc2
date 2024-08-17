@@ -10,7 +10,7 @@ class Auth extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('email')) {
-            redirect('Auth');
+            redirect('Dashboard');
         }
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email',[
             'valid_email' => 'Email harus valid',
