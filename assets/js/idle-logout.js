@@ -13,6 +13,6 @@ $(document).ready(function(){
 function timerIncrement() {
     idleTime++;
     if (idleTime > 10) { // 10 menit
-        window.location.href = "<?= base_url('Auth/index'); ?>";
+        redirect('Auth');
     }
 }
