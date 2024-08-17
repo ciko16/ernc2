@@ -1,7 +1,7 @@
 <?php
 defined ('BASEPATH') or exit ('No direct script access allowed');
 
-class PeminjamanLab extends Admin_Controller
+class PeminjamanLab extends CI_Controller
 {
     public function __construct()
     {
@@ -9,6 +9,12 @@ class PeminjamanLab extends Admin_Controller
         $this->load->model('Peminjaman_model');
         $this->load->library('pagination');
         $this->load->library('session');
+
+        // Cek apakah sesi sudah habis
+        if (!$this->session->userdata('logged_in')) {
+            // Redirect ke halaman login
+            redirect('auth/login');
+        }
     }
 
     public function index()
