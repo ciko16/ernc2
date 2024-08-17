@@ -1,0 +1,111 @@
+body {
+    font-size: 14px;
+}
+.sidebar .fas.fa-user {
+    color: #2B2D2F !important;
+    font-size: 14px;
+}
+.sidebar .fas.fa-info {
+    color: #2B2D2F !important;
+    font-size: 14px;
+}
+.sidebar .fas.fa-image {
+    color: #2B2D2F !important;
+    font-size: 14px;
+}
+.sidebar .fas.fa-calendar {
+    color: #2B2D2F !important;
+    font-size: 14px;
+}
+.sidebar .fas.fa-boxes {
+    color: #2B2D2F !important;
+    font-size: 14px;
+}
+.sidebar .fas.fa-money-bill {
+    color: #2B2D2F !important;
+    font-size: 14px;
+}
+.sidebar .fas.fa-clipboard-list {
+    color: #2B2D2F !important;
+    font-size: 14px;
+}
+.sidebar .fas.fa-flask {
+    color: #2B2D2F !important;
+    font-size: 14px;
+}
+.sidebar .fas.fa-tachometer-alt {
+color: #2B2D2F !important;
+font-size: 14px;
+}
+.sidebar-heading {
+color: #2B2D2F !important;
+}
+.navbar-nav .nav-link {
+color: #2B2D2F !important;
+}
+.navbar-nav.bg-gradient-primary {
+background-color: #87b753 !important;
+background-image: none !important;
+font-size: 14px;
+}
+.sidebar-brand-text {
+    color: #2B2D2F !important;
+}
+#sidebarToggle i {
+    color: black;
+}
+.thumbnail-image {
+    width: 100px;
+    height: auto;
+}
+.btn-custom-info {
+    background-color: #17a2b8;
+    color: #0c5460;
+    font-size: 14px;
+}
+.btn-custom-info:hover {
+    background-color: #138496;
+    color: #0c5460;
+}
+.btn-custom-success {
+    background-color: #28a745;
+    color: #155724;
+    font-size: 14px;
+}
+.btn-custom-success:hover {
+    background-color: #218838;
+    color: #155724;
+}
+#asal_instansi {
+    text-transform: uppercase;
+}
+#asal_instansi::placeholder {
+    text-transform: none;
+}
+.bg-custom-success {
+    background-color: #87b753;
+    color: #155724;
+}
+.rounded-table {
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    .rounded-table thead tr:first-child th:first-child {
+        border-top-left-radius: 15px;
+    }
+    .rounded-table thead tr:first-child th:last-child {
+        border-top-right-radius: 15px;
+    }
+    .rounded-table tbody tr:last-child td:first-child {
+        border-bottom-left-radius: 15px;
+    }
+    .rounded-table tbody tr:last-child td:last-child {
+        border-bottom-right-radius: 15px;
+    }
+    .status-column {
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: clip;
+    }
