@@ -56,8 +56,10 @@
                     $status_class = 'text-danger';
                 } elseif ($us['status'] == 'Selesai') {
                     $status_class = 'text-success';
-                } else {
+                } elseif ($us['status'] == 'Sedang Dikerjakan') {
                   $status_class = 'text-warning';
+                } else {
+                  $status_class = 'text-disabled';
                 }
                 ?>
                 <span class="<?= $status_class ?>"><?= $us['status']; ?></span>
