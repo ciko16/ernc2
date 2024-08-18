@@ -102,6 +102,13 @@ Form Edit Data Layanan Lab
         $('#jumlah_sampel').keyup(function() {
             calculateBiaya();
         });
+        $('#jumlah_sampel').keyup(function() {
+            calculateBiaya();
+        });
+        // ubah data biaya dari tombol input number
+        $('#jumlah_sampel').on('input',function() {
+            calculateBiaya();
+        });
     // menambahkan format rupiah pada kolom biaya
     function formatRupiah(input) {
     var number_string = input.replace(/[^,\d]/g, '').toString();
