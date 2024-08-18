@@ -365,7 +365,7 @@ class LayananLab extends CI_Controller
                 'status' => 'Menunggu konfirmasi',
                 'created_date' => date('Y-m-d', time()),
                 'target_selesai' => $this->input->post('target_selesai'),
-                'konfirmasi' => 'Segera Dikonfirmasi!'
+                'konfirmasi' => 'Harap Dikonfirmasi'
             ];
 
              // Handle file upload if there's any
