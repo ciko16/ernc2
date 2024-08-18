@@ -17,15 +17,17 @@ Form Tambah Data Kalender
         <?= form_error('tanggal', '<small class="text-danger pl-3">', '</small>');?>
     </div>
     <div class="form-group">
-            <label for="booking">Booking</label>
-            <select name="booking" id="booking" class="form-control">
-                <option value="">Pilih Booking</option>
-                <?php foreach($inventaris as $item): ?>
-                    <option value="<?= $item['id']; ?>"><?= $item['nama']; ?></option>
-                <?php endforeach; ?>
-            </select>
-            <?= form_error('booking', '<small class="text-danger pl-3">', '</small>');?>
-        </div>
+    <label for="booking">Booking</label>
+    <select name="booking" id="booking" class="form-control">
+        <option value="">Pilih Booking</option>
+        <?php foreach($inventaris as $item): ?>
+            <option value="<?= $item['id']; ?>">
+                <?= $item['nama']; ?> - Jumlah: <?= $item['jumlah']; ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+    <?= form_error('booking', '<small class="text-danger pl-3">', '</small>');?>
+    </div>
     <div class="form-group">
         <label for="isi">Deskripsi</label>
         <input type="text"name="isi" class="form-control" id="isi" placeholder="Deskripsi">
