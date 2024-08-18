@@ -35,7 +35,7 @@
     <tr>
         <td> <?= $i ?>.</td>
         <td><?= $item['tanggal']; ?></td>
-        <td><?= $item['booking_name']; ?></td>
+        <td><?= $item['booking']; ?></td>
         <td><?= $item['isi']; ?></td>
         <td>
             <!-- <a href="<?= base_url('TabelKalender/detail/'.$item['id']);?>" class="badge badge-info">Detail</a> -->
