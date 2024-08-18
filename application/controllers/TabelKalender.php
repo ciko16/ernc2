@@ -126,6 +126,7 @@ class TabelKalender extends CI_Controller
             $data = [
                 'tanggal' => $this->input->post('tanggal'),
                 'isi' => $this->input->post('isi'),
+                'booking' => $this->input->post('booking'),
                 'status' => 1
             ];
             $id = $this->input->post('id');
