@@ -114,13 +114,5 @@ class TabelKalender_model extends CI_Model
 
         return $query->result_array();
     }
-    public function get_calendar_data()
-    {
-        $this->db->select('kalenderbaru.*, inventaris.nama as booking_nama');
-        $this->db->from('kalenderbaru');
-        $this->db->join('inventaris', 'kalenderbaru.booking = inventaris.id', 'left');
-        $query = $this->db->get();
-        return $query->result_array();
-    }
 }
 ?>
