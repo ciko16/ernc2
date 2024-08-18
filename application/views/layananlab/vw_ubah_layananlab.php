@@ -39,6 +39,11 @@ Form Edit Data Layanan Lab
         <input type="text" name="biaya" value="<?= 'Rp ' . number_format($layanan_lab['biaya'], 0, ',', '.'); ?>" oninput="formatRupiah(this)" class="form-control" id="biaya" placeholder="Biaya" readonly>
     </div>
     <div class="form-group">
+        <label for="target_selesai">Target Selesai</label>
+        <input type="date" class="form-control" id="target_selesai" name="target_selesai" value="<?= $layanan_lab['target_selesai']; ?>" placeholder="Target Selesai">
+        <?= form_error('target_selesai', '<small class="text-danger pl-3">', '</small>');?>
+    </div>
+    <div class="form-group">
         <label for="no_whatsapp">Nomor Whatsapp</label>
         <input type="text"name="no_whatsapp" value="<?= $layanan_lab['no_whatsapp']; ?>" class="form-control" id="no_whatsapp" placeholder="Nomor Whatsapp">
     </div>
