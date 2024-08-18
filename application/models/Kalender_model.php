@@ -69,25 +69,28 @@ class Kalender_model extends CI_Model {
     }
     
     public function get_calender_data($year, $month)
-    {
-       $query = $this->db
-           ->select('tanggal, isi, booking')
-           ->from('kalenderbaru')
-           ->like('tanggal', "$year-$month", 'after')
-           ->get();
+{
+    $query = $this->db
+        ->select('tanggal, isi, booking')
+        ->from('kalenderbaru')
+        ->like('tanggal', "$year-$month", 'after')
+        ->get();
 
-       if ($query === FALSE) {
-          // Handle query error here
-          return array();
-         }
-
-         $cal_data = array();
-         foreach ($query->result() as $row) {
-             $calendar_date = date("j", strtotime($row->tanggal)); // Ambil tanggal hari saja
-             // Gabungkan 'isi' dan 'booking' dengan HTML
-             $cal_data[(int)$calendar_date] = '<div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $row->booking . '</div>';
-        }
+    if ($query === FALSE) {
+        // Handle query error here
+        return array();
     }
+
+    $cal_data = array();
+    foreach ($query->result() as $row) {
+        $calendar_date = date("j", strtotime($row->tanggal)); // Ambil tanggal hari saja
+        // Gabungkan 'isi' dan 'booking' dengan HTML
+        $cal_data[(int)$calendar_date] = '<div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $row->booking . '</div>';
+    }
+
+    return $cal_data;
+}
+
     public function add_calender_data($data, $tanggal)
     {
         $formatted_date = date("Y-m-d", strtotime(str_replace('-', '/', $tanggal)));
