@@ -364,7 +364,8 @@ class LayananLab extends CI_Controller
                 'no_whatsapp' => $this->input->post('no_whatsapp'),
                 'status' => 'Menunggu konfirmasi',
                 'created_date' => date('Y-m-d', time()),
-                'target_selesai' => $this->input->post('target_selesai')
+                'target_selesai' => $this->input->post('target_selesai'),
+                'konfirmasi' => 'Segera Dikonfirmasi!'
             ];
 
              // Handle file upload if there's any
