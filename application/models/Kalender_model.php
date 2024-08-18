@@ -84,10 +84,8 @@ class Kalender_model extends CI_Model {
 
     $cal_data = array();
     foreach ($query->result() as $row) {
-        $calendar_date = date("j-n-Y", strtotime($row->tanggal));
-        $cal_data[(int)substr($calendar_date, 0, 2)] = array(
-            'content' => $row->isi
-        );
+        $calendar_date = date("j", strtotime($row->tanggal));
+        $cal_data[(int)$calendar_date] = $row->isi;
     }
 
     return $cal_data;
