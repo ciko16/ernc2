@@ -99,8 +99,8 @@ class TabelKalender_model extends CI_Model
         $query = $this->db->get();
         return $query->num_rows();
     }
-    public function getInventaris() {
-        $this->db->select('id, nama, jumlah');
+    public function getInventaris($tes) {
+        $this->db->select('id, nama, jumlah', $tes);
         $query = $this->db->get('Inventaris');
         return $query->result_array();
     }
