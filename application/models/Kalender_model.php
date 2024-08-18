@@ -81,19 +81,13 @@ class Kalender_model extends CI_Model {
           return array();
          }
 
-        $cal_data = array();
-
+         $cal_data = array();
          foreach ($query->result() as $row) {
-         $calendar_date = date("j", strtotime($row->tanggal)); // Ambil tanggal hari saja
-    
-        // Periksa apakah ada data booking
-        $booking_data = !empty($row->booking) ? $row->booking : 'Tidak ada data';
-
-        // Gabungkan 'isi' dan 'booking' dengan HTML
-        $cal_data[(int)$calendar_date] = '<div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $booking_data . '</div>';
+             $calendar_date = date("j", strtotime($row->tanggal)); // Ambil tanggal hari saja
+             // Gabungkan 'isi' dan 'booking' dengan HTML
+             $cal_data[(int)$calendar_date] = '<div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $row->booking . '</div>';
         }
     }
-
     public function add_calender_data($data, $tanggal)
     {
         $formatted_date = date("Y-m-d", strtotime(str_replace('-', '/', $tanggal)));
