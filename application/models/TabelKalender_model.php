@@ -99,21 +99,32 @@ class TabelKalender_model extends CI_Model
         $query = $this->db->get();
         return $query->num_rows();
     }
-    public function getInventaris()
-{
-    // Ambil hanya kolom 'id', 'nama', dan 'jumlah' dari tabel 'Inventaris'
-    $this->db->select('id, nama, jumlah');
-    $query = $this->db->get('inventaris');
+    public function getInventaris() {
+
+        // Ambil hanya kolom 'id', 'nama', dan 'jumlah' dari tabel 'Inventaris'
+        $this->db->select('id, nama, jumlah');
+        $query = $this->db->get('inventaris');
     
-    // Periksa apakah query berhasil
-    if (!$query) {
+        // Periksa apakah query berhasil
+        if (!$query) {
         $error = $this->db->error();
         log_message('error', 'Database query error: ' . $error['message']);
         return [];
+        }
+
+        return $query->result_array();
     }
+    public function updateInventaris($id) {
+        // Cek apakah jumlah lebih dari 0
+        $this->db->where('id', $id);
+        $inventaris = $this->db->get('inventaris')->row_array();
 
-    return $query->result_array();
-}
-
+        // Kurangi jumlah inventaris yang dipesan
+        if ($inventaris && $inventaris['jumlah'] > 0) {
+            $this->db->set('jumlah', 'jumlah-1', FALSE);
+            $this->db->where('id', $id);
+            $this->db->update('Inventaris');
+        }
+    }
 }
 ?>

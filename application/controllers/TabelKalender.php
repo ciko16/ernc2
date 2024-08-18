@@ -83,9 +83,15 @@ class TabelKalender extends CI_Controller
             $data = [
                 'tanggal' => $this->input->post('tanggal'),
                 'isi' => $this->input->post('isi'),
+                'booking_id' => $this->input->post('booking'),
                 'status' => 1
             ];
        $this->TabelKalender_model->insert($data);
+
+       // Update jumlah inventaris
+       $booking_id = $this->input->post('booking');
+       $this->TabelKalender_model->updateInventaris($booking_id);
+       
        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
        Data Kalender Berhasil Ditambah!</div>');
        redirect('TabelKalender');
