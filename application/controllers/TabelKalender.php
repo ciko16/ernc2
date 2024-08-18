@@ -69,7 +69,7 @@ class TabelKalender extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['kalenderbaru'] = $this->TabelKalender_model->get();
         // $data['kalenderbaru'] = $this->TabelKalender_model->getWithBooking();
-        $data['inventaris'] = $this->TabelKalender_model->getInventaris(); 
+        // $data['inventaris'] = $this->TabelKalender_model->getInventaris(); 
         $this->form_validation->set_rules('tanggal','Tanggal','required',[
             'required' => 'Tanggal Wajib di Isi'
         ]);
@@ -89,9 +89,9 @@ class TabelKalender extends CI_Controller
             ];
        $this->TabelKalender_model->insert($data);
 
-       // Update jumlah inventaris
-       $booking_id = $this->input->post('booking');
-       $this->TabelKalender_model->updateInventaris($booking_id);
+    //    Update jumlah inventaris
+    //    $booking_id = $this->input->post('booking');
+    //    $this->TabelKalender_model->updateInventaris($booking_id);
 
        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
        Data Kalender Berhasil Ditambah!</div>');

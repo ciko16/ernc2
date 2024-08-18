@@ -31,16 +31,16 @@
     </thead>
     <tbody>
         <?php $i = 1; ?>
-        <?php foreach ($kalenderbaru as $item) : ?>
+        <?php foreach ($kalenderbaru as $kb) : ?>
     <tr>
         <td> <?= $i ?>.</td>
-        <td><?= $item['tanggal']; ?></td>
-        <td><?= $item['booking']; ?></td>
-        <td><?= $item['isi']; ?></td>
+        <td><?= $kb['tanggal']; ?></td>
+        <td><?= $kb['booking']; ?></td>
+        <td><?= $kb['isi']; ?></td>
         <td>
-            <!-- <a href="<?= base_url('TabelKalender/detail/'.$item['id']);?>" class="badge badge-info">Detail</a> -->
-            <a href="<?= base_url('TabelKalender/edit/'.$item['id']);?>" class="text-warning">Edit</a>
-            <a href="<?= base_url('TabelKalender/hapus/'.$item['id']);?>" class="text-danger" onclick="javascript: return confirm('Anda yakin untuk menghapus data?')">Hapus</a>
+            <!-- <a href="<?= base_url('TabelKalender/detail/'.$kb['id']);?>" class="badge badge-info">Detail</a> -->
+            <a href="<?= base_url('TabelKalender/edit/'.$kb['id']);?>" class="text-warning">Edit</a>
+            <a href="<?= base_url('TabelKalender/hapus/'.$kb['id']);?>" class="text-danger" onclick="javascript: return confirm('Anda yakin untuk menghapus data?')">Hapus</a>
         </td>
     </tr>
     <?php $i++; ?>
