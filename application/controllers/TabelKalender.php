@@ -58,6 +58,7 @@ class TabelKalender extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['kalenderbaru'] = $this->TabelKalender_model->get($config['per_page'], $page);
         $data['pagination'] = $this->pagination->create_links();
+        $data['inventaris'] = $this->TabelKalender_model->getWithBooking();
         $this->load->view("layout/header", $data);
         $this->load->view("tabelkalender/vw_tb_kalender", $data);
         $this->load->view("layout/footer");
