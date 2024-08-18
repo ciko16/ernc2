@@ -59,6 +59,12 @@
                 <input class="form-control" id="biaya" name="biaya" type="text" oninput="formatRupiah(this)" placeholder="Biaya akan muncul setelah memilih jenis keperluan" readonly />
                 <label for="biaya">Biaya</label>
             </div>
+            <!-- Target Selesai input -->
+            <div class="form-group">
+                <label for="target_selesai">Target Selesai</label>
+                <input type="date" class="form-control" id="target_selesai" name="target_selesai" placeholder="Target Selesai" required />
+                <?= form_error('target_selesai', '<small class="text-danger pl-3">', '</small>');?>
+            </div>
             <!-- Nomor Whatsapp input-->
             <div class="form-floating mb-3">
                 <input class="form-control" id="no_whatsapp" name="no_whatsapp" type="text" placeholder="Masukkan nomor whatsapp anda" required />

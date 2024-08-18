@@ -221,6 +221,9 @@ class LayananLab extends CI_Controller
         $this->form_validation->set_rules('status','Status','required',[
             'required' => 'Status Wajib di Isi'
         ]);
+        $this->form_validation->set_rules('target_selesai', 'Target Selesai', 'required', [
+            'required' => 'Target Selesai Wajib di Isi'
+        ]);
         if($this->form_validation->run()==false){
             $this->load->view("layout/header",$data);
             $this->load->view("layananlab/vw_ubah_layananlab", $data);
@@ -234,7 +237,8 @@ class LayananLab extends CI_Controller
                 'biaya' => str_replace(['Rp ','.'],'', $this->input->post('biaya')), // menghapus format rupiah ketika edit biaya
                 'no_whatsapp' => $this->input->post('no_whatsapp'),
                 'status' => $this->input->post('status'),
-                'konfirmasi' => $this->session->userdata('nama')
+                'konfirmasi' => $this->session->userdata('nama'),
+                'target_selesai' => $this->input->post('target_selesai')
             ];
             $upload_image = $_FILES['lampiran_sampel']['name'];
             if($upload_image){
@@ -344,6 +348,7 @@ class LayananLab extends CI_Controller
         $this->form_validation->set_rules('jumlah_sampel', 'Jumlah Sampel', 'required|integer');
         $this->form_validation->set_rules('biaya', 'Biaya', 'required');
         $this->form_validation->set_rules('no_whatsapp', 'No Whatsapp', 'required');
+        $this->form_validation->set_rules('target_selesai', 'Target Selesai', 'required|date');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('frontend/layananlab');
@@ -358,7 +363,8 @@ class LayananLab extends CI_Controller
                 'biaya' => str_replace(['Rp ', '.'], '', $this->input->post('biaya')), // menghapus format rupiah ketika input data
                 'no_whatsapp' => $this->input->post('no_whatsapp'),
                 'status' => 'Sedang Dikerjakan',
-                'created_date' => date('Y-m-d', time())
+                'created_date' => date('Y-m-d', time()),
+                'target_selesai' => $this->input->post('target_selesai')
             ];
 
              // Handle file upload if there's any
