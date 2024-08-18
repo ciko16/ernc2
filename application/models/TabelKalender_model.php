@@ -127,12 +127,11 @@ class TabelKalender_model extends CI_Model
         }
     }
     public function getWithBooking() {
-        $this->db->select('k.*, i.nama as booking_name');
+        $this->db->select('k.*, i.nama AS booking_name');
         $this->db->from('kalenderbaru k');
-        $this->db->join('inventaris i', 'k.booking_id = i.id', 'left');
+        $this->db->join('Inventaris i', 'k.booking = i.id', 'left');
         $query = $this->db->get();
-        return $query->result_array();
-
+    
         if (!$query) {
             // Cek kesalahan query
             $error = $this->db->error();
