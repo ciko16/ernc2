@@ -31,12 +31,12 @@
     </thead>
     <tbody>
         <?php $i = 1; ?>
-        <?php foreach ($kalenderbaru as $kb) : ?>
+        <?php foreach ($kalenderbaru as $item) : ?>
     <tr>
         <td> <?= $i ?>.</td>
-        <td><?= $kb['tanggal']; ?></td>
-        <td><?= $kb['booking_name']; ?></td>
-        <td><?= $kb['isi']; ?></td>
+        <td><?= $item['tanggal']; ?></td>
+        <td><?= $item['booking_name']; ?></td>
+        <td><?= $item['isi']; ?></td>
         <td>
             <!-- <a href="<?= base_url('TabelKalender/detail/'.$kb['id']);?>" class="badge badge-info">Detail</a> -->
             <a href="<?= base_url('TabelKalender/edit/'.$kb['id']);?>" class="text-warning">Edit</a>
