@@ -58,7 +58,6 @@ class TabelKalender extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['kalenderbaru'] = $this->TabelKalender_model->get($config['per_page'], $page);
         $data['pagination'] = $this->pagination->create_links();
-        $data['inventaris'] = $this->TabelKalender_model->getWithBooking();
         $this->load->view("layout/header", $data);
         $this->load->view("tabelkalender/vw_tb_kalender", $data);
         $this->load->view("layout/footer");
@@ -69,7 +68,7 @@ class TabelKalender extends CI_Controller
         $data['judul'] = "Halaman Tambah Kalender";
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['kalenderbaru'] = $this->TabelKalender_model->get();
-        $data['inventaris'] = $this->TabelKalender_model->getWithBooking(); 
+        $data['inventaris'] = $this->TabelKalender_model->getInventaris(); 
         $this->form_validation->set_rules('tanggal','Tanggal','required',[
             'required' => 'Tanggal Wajib di Isi'
         ]);
@@ -84,14 +83,14 @@ class TabelKalender extends CI_Controller
             $data = [
                 'tanggal' => $this->input->post('tanggal'),
                 'isi' => $this->input->post('isi'),
-                'booking_name' => $this->input->post('booking'),
+                'booking' => $this->input->post('booking'),
                 'status' => 1
             ];
        $this->TabelKalender_model->insert($data);
 
        // Update jumlah inventaris
-       $booking_name = $this->input->post('booking');
-       $this->TabelKalender_model->updateInventaris($booking_name);
+       $booking_id = $this->input->post('booking');
+       $this->TabelKalender_model->updateInventaris($booking_id);
 
        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
        Data Kalender Berhasil Ditambah!</div>');
