@@ -68,7 +68,7 @@ class TabelKalender extends CI_Controller
         $data['judul'] = "Halaman Tambah Kalender";
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['kalenderbaru'] = $this->TabelKalender_model->get();
-        $data['inventaris'] = $this->TabelKalender_model->getInventaris('nama, jumlah'); 
+        $data['inventaris'] = $this->TabelKalender_model->getInventaris(); 
         $this->form_validation->set_rules('tanggal','Tanggal','required',[
             'required' => 'Tanggal Wajib di Isi'
         ]);
