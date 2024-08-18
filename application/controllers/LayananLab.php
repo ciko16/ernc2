@@ -362,7 +362,7 @@ class LayananLab extends CI_Controller
                 'jumlah_sampel' => $this->input->post('jumlah_sampel'),
                 'biaya' => str_replace(['Rp ', '.'], '', $this->input->post('biaya')), // menghapus format rupiah ketika input data
                 'no_whatsapp' => $this->input->post('no_whatsapp'),
-                'status' => 'Menunggu konfirmasi',
+                'status' => 'Menunggu Konfirmasi',
                 'created_date' => date('Y-m-d', time()),
                 'target_selesai' => $this->input->post('target_selesai'),
                 'konfirmasi' => 'Harap Dikonfirmasi'
