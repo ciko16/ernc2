@@ -40,6 +40,11 @@ Form Tambah Data Layanan Lab
         <?= form_error('biaya', '<small class="text-danger pl-3">', '</small>');?>
     </div>
     <div class="form-group">
+        <label for="target_selesai">Target Selesai</label>
+        <input type="date" class="form-control" id="target_selesai" name="target_selesai" placeholder="Target Selesai">
+        <?= form_error('target_selesai', '<small class="text-danger pl-3">', '</small>');?>
+    </div>
+    <div class="form-group">
         <label for="no_whatsapp">Nomor Whatsapp</label>
         <input type="text"name="no_whatsapp" value="<?= set_value('no_whatsapp')?>" class="form-control" id="no_whatsapp" placeholder="Nomor Whatsapp">
         <?= form_error('no_whatsapp', '<small class="text-danger pl-3">', '</small>');?>

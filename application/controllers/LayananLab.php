@@ -114,6 +114,9 @@ class LayananLab extends CI_Controller
     $this->form_validation->set_rules('status', 'Status', 'required', [
         'required' => 'Status Wajib di Isi'
     ]);
+    $this->form_validation->set_rules('target_selesai', 'Target Selesai', 'required', [
+        'required' => 'Target Selesai Wajib di Isi'
+    ]);
 
     if ($this->form_validation->run() == false) {
         $this->load->view("layout/header", $data);
@@ -130,6 +133,7 @@ class LayananLab extends CI_Controller
         // mendapatkan nama admin yang melakukan konfirmasi
         $konfirmasi = $this->session->userdata('nama');
         $created_date = date('Y-m-d', time());
+        $target_selesai = $this->input->post('target_selesai');
 
         $data = [
             'nama' => $nama,
@@ -140,7 +144,8 @@ class LayananLab extends CI_Controller
             'no_whatsapp' => $no_whatsapp,
             'status' => $status,
             'konfirmasi' => $konfirmasi, // nama admin tersimpan
-            'created_date' => $created_date
+            'created_date' => $created_date,
+            'target_selesai' => $target_selesai
         ];
 
         $upload_image = $_FILES['lampiran_sampel']['name'];
