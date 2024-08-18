@@ -21,7 +21,8 @@ Form Tambah Data Kalender
     <select name="booking" id="booking" class="form-control">
         <option value="">Pilih Booking</option>
         <?php foreach($inventaris as $item): ?>
-            <option value="<?= $item['nama']; ?>">
+            <option value="<?= $item['id']; ?>">
+                <?= $item['nama']; ?>
             </option>
         <?php endforeach; ?>
     </select>

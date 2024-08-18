@@ -114,32 +114,13 @@ class TabelKalender_model extends CI_Model
 
         return $query->result_array();
     }
-    // public function updateInventaris($id) {
-    //     // Cek apakah jumlah lebih dari 0
-    //     $this->db->where('id', $id);
-    //     $inventaris = $this->db->get('inventaris')->row_array();
-
-    //     // Kurangi jumlah inventaris yang dipesan
-    //     if ($inventaris && $inventaris['jumlah'] > 0) {
-    //         $this->db->set('jumlah', 'jumlah-1', FALSE);
-    //         $this->db->where('id', $id);
-    //         $this->db->update('Inventaris');
-    //     }
-    // }
-    // public function getWithBooking() {
-    //     $this->db->select('k.*, i.nama AS booking_name');
-    //     $this->db->from('kalenderbaru k');
-    //     $this->db->join('Inventaris i', 'k.booking = i.id', 'left');
-    //     $query = $this->db->get();
-    
-    //     if (!$query) {
-    //         // Cek kesalahan query
-    //         $error = $this->db->error();
-    //         log_message('error', 'Query error: ' . print_r($error, true));
-    //         return false;
-    //     }
-    
-    //     return $query->result_array();
-    // }
+    public function get_calendar_data()
+    {
+        $this->db->select('kalenderbaru.*, inventaris.nama as booking_nama');
+        $this->db->from('kalenderbaru');
+        $this->db->join('inventaris', 'kalenderbaru.booking = inventaris.id', 'left');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 }
 ?>
