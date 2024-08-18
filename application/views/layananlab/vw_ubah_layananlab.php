@@ -89,7 +89,7 @@ Form Edit Data Layanan Lab
             var jumlah_sampel = $('#jumlah_sampel').val();
             if (biaya && jumlah_sampel) {
                 var total_biaya = biaya * jumlah_sampel;
-                $('#biaya').val(total_biaya);
+                $('#biaya').val('Rp ' + formatRupiah(total_biaya.toString()));
             } else {
                 $('#biaya').val('');
             }
@@ -102,7 +102,7 @@ Form Edit Data Layanan Lab
         $('#jumlah_sampel').keyup(function() {
             calculateBiaya();
         });
-        $('#jumlah_sampel').keyup(function() {
+        $('#jumlah_sampel').keydown(function() {
             calculateBiaya();
         });
         // ubah data biaya dari tombol input number
