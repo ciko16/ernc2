@@ -102,23 +102,28 @@ Form Edit Data Layanan Lab
         $('#jumlah_sampel').keyup(function() {
             calculateBiaya();
         });
-    });
-</script>
-
-<script> // menambahkan format rupiah pada kolom biaya
-function formatRupiah(input) {
-    let value = input.value.replace(/[^,\d]/g, '').toString();
-    let split = value.split(',');
-    let sisa = split[0].length % 3;
-    let rupiah = split[0].substr(0, sisa);
-    let ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+    // menambahkan format rupiah pada kolom biaya
+    function formatRupiah(input) {
+    var number_string = input.replace(/[^,\d]/g, '').toString();
+     split = number_string.split(',');
+     sisa = split[0].length % 3;
+     rupiah = split[0].substr(0, sisa);
+     ribuan = split[0].substr(sisa).match(/\d{3}/gi);
 
     if (ribuan) {
-        let separator = sisa ? '.' : '';
+        var separator = sisa ? '.' : '';
         rupiah += separator + ribuan.join('.');
     }
 
     rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-    input.value = 'Rp ' + rupiah;
+    return rupiah;
 }
-</script> 
+});
+</script>
+
+<!-- membuat input asal instansi menjadi huruf kapital -->
+<script> 
+    document.getElementById('asal_instansi').addEventListener('input', function() {
+        this.value = this.value.toUpperCase();
+    });
+</script>
