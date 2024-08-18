@@ -69,27 +69,30 @@ class Kalender_model extends CI_Model {
     }
     
     public function get_calender_data($year, $month)
-{
-    $query = $this->db
-        ->select('tanggal, isi, booking')
-        ->from('kalenderbaru')
-        ->like('tanggal', "$year-$month", 'after')
-        ->get();
+    {
+       $query = $this->db
+           ->select('tanggal, isi, booking')
+           ->from('kalenderbaru')
+           ->like('tanggal', "$year-$month", 'after')
+           ->get();
 
-    if ($query === FALSE) {
-        // Handle query error here
-        return array();
-    }
+       if ($query === FALSE) {
+          // Handle query error here
+          return array();
+         }
 
-    $cal_data = array();
-    foreach ($query->result() as $row) {
-        $calendar_date = date("j", strtotime($row->tanggal)); // Ambil tanggal hari saja
+        $cal_data = array();
+
+         foreach ($query->result() as $row) {
+         $calendar_date = date("j", strtotime($row->tanggal)); // Ambil tanggal hari saja
+    
+        // Periksa apakah ada data booking
+        $booking_data = !empty($row->booking) ? $row->booking : 'Tidak ada data';
+
         // Gabungkan 'isi' dan 'booking' dengan HTML
-        $cal_data[(int)$calendar_date] = '<div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $row->booking . '</div>';
+        $cal_data[(int)$calendar_date] = '<div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $booking_data . '</div>';
+        }
     }
-
-    return $cal_data;
-}
 
     public function add_calender_data($data, $tanggal)
     {
