@@ -95,8 +95,10 @@
                     $status_class = 'text-danger';
                 } elseif ($layanan_lab['status'] == 'Selesai') {
                     $status_class = 'text-success';
-                } else {
+                } elseif ($layanan_lab['status'] == 'Sedang Dikerjakan') {
                     $status_class = 'text-warning';
+                } else {
+                    $status_class = 'text-disabled';
                 }
                 ?>
                         <div class="col-md-6 <?= $status_class ?>"><?= $layanan_lab['status']; ?></div>
