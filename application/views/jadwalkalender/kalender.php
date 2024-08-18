@@ -16,6 +16,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         .card-body {
             padding: 1rem;
         }
+        .calendar-isi {
+            font-weight: bold; /* Atur teks 'isi' menjadi tebal */
+        }
+        .calendar-booking {
+             font-weight: normal; /* Atur teks 'booking' menjadi normal */
+        }
     </style>
 </head>
 </head>

@@ -84,8 +84,8 @@ class Kalender_model extends CI_Model {
     $cal_data = array();
     foreach ($query->result() as $row) {
         $calendar_date = date("j", strtotime($row->tanggal)); // Ambil tanggal hari saja
-        // Gabungkan 'isi' dan 'booking' menjadi satu string
-        $cal_data[(int)$calendar_date] = $row->isi . ' ' . $row->booking;
+        // Gabungkan 'isi' dan 'booking' dengan HTML
+        $cal_data[(int)$calendar_date] = '<div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $row->booking . '</div>';
     }
 
     return $cal_data;
