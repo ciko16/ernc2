@@ -132,6 +132,15 @@ class TabelKalender_model extends CI_Model
         $this->db->join('inventaris i', 'k.booking_id = i.id', 'left');
         $query = $this->db->get();
         return $query->result_array();
+
+        if (!$query) {
+            // Cek kesalahan query
+            $error = $this->db->error();
+            log_message('error', 'Query error: ' . print_r($error, true));
+            return false;
+        }
+    
+        return $query->result_array();
     }
 }
 ?>
