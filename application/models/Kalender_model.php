@@ -84,15 +84,12 @@ class Kalender_model extends CI_Model {
     $cal_data = array();
     foreach ($query->result() as $row) {
         $calendar_date = date("j", strtotime($row->tanggal)); // Ambil tanggal hari saja
-        $cal_data[(int)$calendar_date] = array(
-            'content' => $row->isi,   // Isi dari data kalender
-            'booking' => $row->booking // Data booking, sama seperti isi
-        );
+        // Gabungkan 'isi' dan 'booking' menjadi satu string
+        $cal_data[(int)$calendar_date] = $row->isi . ' ' . $row->booking;
     }
 
     return $cal_data;
 }
-
 
     public function add_calender_data($data, $tanggal)
     {
