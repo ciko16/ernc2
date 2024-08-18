@@ -90,11 +90,4 @@ class Home extends CI_Controller {
     $this->load->view('jadwalkalender/kalender', $data);
     $this->load->view('frontend/footer');
 }
-public function webprofil() {
-  $this->load->model('Galeri_model');
-
-  $galeri = $this->Galeri_model->get_all_galeri();
-
-  
-}
 }

@@ -71,7 +71,7 @@ class Kalender_model extends CI_Model {
     public function get_calender_data($year, $month)
 {
     $query = $this->db
-        ->select('tanggal, isi')
+        ->select('tanggal, isi, booking')
         ->from('kalenderbaru')
         ->like('tanggal', "$year-$month", 'after')
         ->get();
@@ -95,7 +95,8 @@ class Kalender_model extends CI_Model {
         $formatted_date = date("Y-m-d", strtotime(str_replace('-', '/', $tanggal)));
         $this->db->insert('kalenderbaru', array(
             'tanggal' => $formatted_date,
-            'isi' => $data
+            'isi' => $data,
+            'booking' => $data
         ));
     }
 }
