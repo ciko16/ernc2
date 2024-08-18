@@ -35,7 +35,7 @@
     <tr>
         <td> <?= $i ?>.</td>
         <td><?= $item['tanggal']; ?></td>
-        <td><?= isset($item['booking_name']) ? $item['booking_name'] : 'Tidak Ada'; ?></td> <!-- Menampilkan nama booking -->
+        <td><?= $item['booking']; ?></td>
         <td><?= $item['isi']; ?></td>
         <td>
             <!-- <a href="<?= base_url('TabelKalender/detail/'.$item['id']);?>" class="badge badge-info">Detail</a> -->
