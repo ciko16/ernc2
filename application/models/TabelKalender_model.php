@@ -79,7 +79,7 @@ class TabelKalender_model extends CI_Model
         $this->db->from('kalenderbaru');
         $this->db->like('tanggal', $keyword);
         $this->db->or_like('isi', $keyword);
-        $this->db->or_like('status', $keyword);
+        $this->db->or_like('booking', $keyword);
         $result = $this->db->get()->result_array();
 
         // konversi ke format tanggal indonesia (dd-mm-yyyy)
@@ -91,7 +91,7 @@ class TabelKalender_model extends CI_Model
     public function count_keyword($keyword) {
         $this->db->like('tanggal', $keyword);
         $this->db->or_like('isi', $keyword);
-        $this->db->or_like('status', $keyword);
+        $this->db->or_like('booking', $keyword);
         return $this->db->get('kalenderbaru')->num_rows();
     }
     public function tkalender() {
