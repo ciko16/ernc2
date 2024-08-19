@@ -113,7 +113,7 @@
                                             <span class="badge <?= 
                                               $status['status'] == 'Selesai' ? 'status-selesai' : 
                                               ($status['status'] == 'Ditolak' ? 'status-ditolak' : 
-                                              ($status['status'] == 'Menunggu Konfirmasi' ? 'badge-secondary' : 'status-proses')) 
+                                              ($status['status'] == 'Menunggu Konfirmasi' ? 'text-secondary' : 'status-proses')) 
                                               ?> badge-pill"><?= $status['count']; ?></span>
                                         </li>
                                     <?php endforeach; ?>
