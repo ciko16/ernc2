@@ -62,7 +62,7 @@
                             // URL Whatsapp
                             $wa_url = "https://wa.me/".$no_whatsapp;
                             ?>
-                            <a href="<?= $wa_url; ?>" class=" text-success" target="_blank"><?= $us['no_whatsapp']; ?></a>
+                            <a href="<?= $wa_url; ?>" class=" text-primary" target="_blank"><?= $us['no_whatsapp']; ?></a>
                         <?php endif; ?></td>
               <td>
                 <!-- memberikan warna pada kondisi status tertentu -->
