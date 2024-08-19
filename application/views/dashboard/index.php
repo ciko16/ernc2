@@ -199,7 +199,7 @@
             <hr>
             <div class="col mr-2">
                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Pendapatan:</div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $total_pendapatan; ?></div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800"><?= number_format($total_pendapatan, 0, ',', '.'); ?></div>
             </div>
             <p>Klik pada kotak di atas untuk menampilkan salah satu data dari Pendapatan Layanan dan Peminjaman</p>
         </div>
