@@ -122,5 +122,15 @@
 </script>
 <!-- idle logout lebih dari 10 menit -->
  <script src="<?= base_url('assets/js/idle-logout.js'); ?>"></script>
+ <script>
+    // Fungsi untuk menghitung dan menampilkan total pendapatan
+    function displayTotalPendapatan(pendapatanLayananData, pendapatanPeminjamanData) {
+        const totalPendapatan = pendapatanLayananData + pendapatanPeminjamanData;
+        document.getElementById('totalPendapatan').textContent = totalPendapatan.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
+    }
+
+    // Panggil fungsi untuk menampilkan total pendapatan
+    displayTotalPendapatan(pendapatanLayananData, pendapatanPeminjamanData);
+</script>
 </body>
 </html>
