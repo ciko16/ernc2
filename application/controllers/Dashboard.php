@@ -28,7 +28,10 @@ class Dashboard extends CI_Controller {
         // Mengambil data inventaris berdasarkan ketersediaan
         $data['inventaris_by_ketersediaan'] = $this->Dashboard_model->get_inventaris_by_ketersediaan();
         // Menghitung total pendapatan keseluruhan
-        $data['total_pendapatan'] = $this->Dashboard_model->get_total_pendapatan_by_status();
+        $total_pendapatan = $this->Dashboard_model->get_total_pendapatan_by_status();
+
+        // Format total pendapatan ke dalam format Rupiah
+         $data['total_pendapatan'] = 'Rp ' . number_format($total_pendapatan, 0, ',', '.');
         
         // Mengambil data jumlah berdasarkan bulan dari model
         $dataPerBulan = $this->Dashboard_model->getByMonthYear();
