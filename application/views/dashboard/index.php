@@ -99,7 +99,7 @@
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Grafik Layanan Lab</h6>
+                                    <h6 class="m-0 font-weight-bold text-success">Grafik Layanan Lab</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -126,7 +126,7 @@
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Grafik Peminjaman Lab</h6>
+                                    <h6 class="m-0 font-weight-bold text-success">Grafik Peminjaman Lab</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -153,7 +153,7 @@
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Grafik Inventaris</h6>
+                                    <h6 class="m-0 font-weight-bold text-success">Grafik Inventaris</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
