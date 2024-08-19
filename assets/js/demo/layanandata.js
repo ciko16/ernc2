@@ -13,8 +13,10 @@ layananLabData.forEach(function(status) {
         backgroundColors.push('#87b753');
     } else if (status.status === 'Ditolak') {
         backgroundColors.push('#ff2400');
-    } else {
+    } else if (status.status === 'Sedang Dikerjakan') {
         backgroundColors.push('#ffdb58');
+    } else {
+        backgroundColors.push('bg-secondary');
     }
 });
 

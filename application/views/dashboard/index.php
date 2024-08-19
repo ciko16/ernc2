@@ -110,7 +110,11 @@
                                     <?php foreach ($layanan_lab_by_status as $status): ?>
                                         <li class="list-group-item d-flex justify-content-between align-items-center">
                                             <?= $status['status']; ?>
-                                            <span class="badge <?= $status['status'] == 'Selesai' ? 'status-selesai' : ($status['status'] == 'Ditolak' ? 'status-ditolak' : 'status-proses' ) ?> badge-pill"><?= $status['count']; ?></span>
+                                            <span class="badge <?= 
+                                              $status['status'] == 'Selesai' ? 'status-selesai' : 
+                                              ($status['status'] == 'Ditolak' ? 'status-ditolak' : 
+                                              ($status['status'] == 'Menunggu Konfirmasi' ? 'badge-secondary' : 'status-proses')) 
+                                              ?> badge-pill"><?= $status['count']; ?></span>
                                         </li>
                                     <?php endforeach; ?>
                                 </div>
