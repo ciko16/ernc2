@@ -62,7 +62,7 @@
                     $status_class = 'text-danger';
                 } elseif ($us['status_peminjaman'] == 'Selesai') {
                     $status_class = 'text-success';
-                } elseif ($peminjaman_lab['status_peminjaman'] == 'Meminjam') {
+                } elseif ($us['status_peminjaman'] == 'Meminjam') {
                     $status_class = 'text-warning';
                 } else {
                     $status_class = 'text-secondary';
