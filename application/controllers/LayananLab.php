@@ -112,6 +112,9 @@ class LayananLab extends CI_Controller
     $this->form_validation->set_rules('no_whatsapp', 'Nomor Whatsapp', 'required', [
         'required' => 'Nomor Whatsapp Wajib di Isi'
     ]);
+    $this->form_validation->set_rules('nama_sampel', 'Nama Sampel', 'required', [
+        'required' => 'Nama Sampel Wajib di Isi'
+    ]);
     $this->form_validation->set_rules('status', 'Status', 'required', [
         'required' => 'Status Wajib di Isi'
     ]);
@@ -130,6 +133,7 @@ class LayananLab extends CI_Controller
         $jumlah_sampel = $this->input->post('jumlah_sampel');
         $biaya = str_replace(['Rp ', '.'], '', $this->input->post('biaya')); // menghapus format rupiah ketika input data
         $no_whatsapp = $this->input->post('no_whatsapp');
+        $nama_sampel = $this->input->post('nama_sampel');
         $status = $this->input->post('status');
         // mendapatkan nama admin yang melakukan konfirmasi
         $konfirmasi = $this->session->userdata('nama');
@@ -143,6 +147,7 @@ class LayananLab extends CI_Controller
             'jumlah_sampel' => $jumlah_sampel,
             'biaya' => $biaya,
             'no_whatsapp' => $no_whatsapp,
+            'nama_sampel' => $nama_sampel,
             'status' => $status,
             'konfirmasi' => $konfirmasi, // nama admin tersimpan
             'created_date' => $created_date,
@@ -219,6 +224,9 @@ class LayananLab extends CI_Controller
         $this->form_validation->set_rules('no_whatsapp','Nomor Whatsapp','required',[
             'required' => 'Nomor Whatsapp Wajib di Isi'
         ]);
+        $this->form_validation->set_rules('nama_sampel','Nama Sampel','required',[
+            'required' => 'Nama Sampel Wajib di Isi'
+        ]);
         $this->form_validation->set_rules('status','Status','required',[
             'required' => 'Status Wajib di Isi'
         ]);
@@ -237,6 +245,7 @@ class LayananLab extends CI_Controller
                 'jumlah_sampel' => $this->input->post('jumlah_sampel'),
                 'biaya' => str_replace(['Rp ','.'],'', $this->input->post('biaya')), // menghapus format rupiah ketika edit biaya
                 'no_whatsapp' => $this->input->post('no_whatsapp'),
+                'nama_sampel' => $this->input->post('nama_sampel'),
                 'status' => $this->input->post('status'),
                 'konfirmasi' => $this->session->userdata('nama'),
                 'target_selesai' => $this->input->post('target_selesai')
@@ -349,6 +358,7 @@ class LayananLab extends CI_Controller
         $this->form_validation->set_rules('jumlah_sampel', 'Jumlah Sampel', 'required|integer');
         $this->form_validation->set_rules('biaya', 'Biaya', 'required');
         $this->form_validation->set_rules('no_whatsapp', 'No Whatsapp', 'required');
+        $this->form_validation->set_rules('nama_sampel', 'Nama Sampel', 'required');
         $this->form_validation->set_rules('target_selesai', 'Target Selesai', 'required|date');
 
         if ($this->form_validation->run() == FALSE) {
@@ -363,6 +373,7 @@ class LayananLab extends CI_Controller
                 'jumlah_sampel' => $this->input->post('jumlah_sampel'),
                 'biaya' => str_replace(['Rp ', '.'], '', $this->input->post('biaya')), // menghapus format rupiah ketika input data
                 'no_whatsapp' => $this->input->post('no_whatsapp'),
+                'nama_sampel' => $this->input->post('nama_sampel'),
                 'status' => 'Menunggu Konfirmasi',
                 'created_date' => date('Y-m-d', time()),
                 'target_selesai' => $this->input->post('target_selesai'),

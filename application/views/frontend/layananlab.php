@@ -70,6 +70,11 @@
                 <input class="form-control" id="no_whatsapp" name="no_whatsapp" type="text" placeholder="Masukkan nomor whatsapp anda" required />
                 <label for="no_whatsapp">Nomor Whatsapp</label>
             </div>
+            <!-- Nama Sampel input-->
+            <div class="form-floating mb-3">
+                <input class="form-control" id="nama_sampel" name="nama_sampel" type="text" placeholder="Masukkan nama sampel" required />
+                <label for="nama_sampel">Nama Sampel</label>
+            </div>
             <!-- Image upload input-->
             <div class="mb-3">
                 <label for="lampiran_sampel" class="form-label">Upload Lampiran Sampel</label>

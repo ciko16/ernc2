@@ -59,6 +59,12 @@
                     </div>
 
                     <div class="row mb-3">
+                        <div class="col-md-4 font-weight-bold">Nama Sampel</div>
+                        <div class="col-md-2">:</div>
+                        <div class="col-md-6"><?= $layanan_lab['nama_sampel']; ?></div>
+                    </div>
+
+                    <div class="row mb-3">
                         <div class="col-md-4 font-weight-bold">Lampiran Sampel</div>
                         <div class="col-md-2">:</div>
                         <div class="col-md-6">

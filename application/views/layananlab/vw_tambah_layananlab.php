@@ -50,6 +50,11 @@ Form Tambah Data Layanan Lab
         <?= form_error('no_whatsapp', '<small class="text-danger pl-3">', '</small>');?>
     </div>
     <div class="form-group">
+        <label for="nama_sampel">Nama Sampel</label>
+        <input type="text"name="nama_sampel" value="<?= set_value('nama_sampel')?>" class="form-control" id="nama_sampel" placeholder="Nama Sampel">
+        <?= form_error('nama_sampel', '<small class="text-danger pl-3">', '</small>');?>
+    </div>
+    <div class="form-group">
         <label for="lampiran_sampel">Lampiran Sampel</label>
         <div class="custom-file">
             <input type="file" class="custom-file-input" name="lampiran_sampel" id="lampiran_sampel" onchange="updateLabel(this)">

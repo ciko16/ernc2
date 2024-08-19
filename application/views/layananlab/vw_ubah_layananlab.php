@@ -47,6 +47,10 @@ Form Edit Data Layanan Lab
         <input type="text"name="no_whatsapp" value="<?= $layanan_lab['no_whatsapp']; ?>" class="form-control" id="no_whatsapp" placeholder="Nomor Whatsapp">
     </div>
     <div class="form-group">
+        <label for="nama_sampel">Nama Sampel</label>
+        <input type="text"name="nama_sampel" value="<?= $layanan_lab['nama_sampel']; ?>" class="form-control" id="nama_sampel" placeholder="Nama Sampel">
+    </div>
+    <div class="form-group">
         <label for="lampiran_sampel">Lampiran Sampel</label>
         <br>
         <img src="<?= base_url('assets/img/layanan/') . $layanan_lab['lampiran_sampel'];?>" style="width: 100px;" class="img-thumbnail">

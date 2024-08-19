@@ -62,6 +62,7 @@ class Layanan_model extends CI_Model
         $this->db->or_like('jumlah_sampel', $keyword);
         $this->db->or_like('biaya', $keyword);
         $this->db->or_like('no_whatsapp', $keyword);
+        $this->db->or_like('nama_sampel', $keyword);
         $this->db->or_like('lampiran_sampel', $keyword);
         $this->db->or_like('status', $keyword);
         return $this->db->get()->result_array();
@@ -73,6 +74,7 @@ class Layanan_model extends CI_Model
         $this->db->or_like('jumlah_sampel', $keyword);
         $this->db->or_like('biaya', $keyword);
         $this->db->or_like('no_whatsapp', $keyword);
+        $this->db->or_like('nama_sampel', $keyword);
         $this->db->or_like('lampiran_sampel', $keyword);
         $this->db->or_like('status', $keyword);
         return $this->db->get('layanan_lab')->num_rows();
