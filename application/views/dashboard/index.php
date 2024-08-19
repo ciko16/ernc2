@@ -197,7 +197,7 @@
                                     <canvas id="pendapatanChart" width="400" height="200"></canvas>
                                     </div>
                                     <hr>
-                                    Grafik Data Pendapatan
+                                    Klik pada kotak diatas untuk menampilkan salah satu data dari Pendapatan Layanan dan Peminjaman
                                 </div>
                             </div>
          </div>
