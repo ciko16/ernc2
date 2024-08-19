@@ -51,7 +51,7 @@ class Dashboard_model extends CI_Model {
         // Menghitung total pendapatan dari tabel peminjaman_lab
         $this->db->select_sum('biaya'); // Pastikan nama kolom sesuai
         $this->db->from('peminjaman_lab');
-        $this->db->where('status', 'Selesai');
+        $this->db->where('status_peminjaman', 'Selesai');
         $query_peminjaman = $this->db->get();
 
         if ($query_peminjaman === FALSE) {
