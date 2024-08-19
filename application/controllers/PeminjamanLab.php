@@ -265,7 +265,7 @@ Peminjaman Lab Berhasil Dihapus!</div>');
         // Load views
         $this->load->view("layout/header", $data);
         $this->load->view("peminjamanlab/vw_peminjamanlab", $data);
-        $this->load->view("layout/footer");
+        $this->load->view("layout/footer", $data);
     }
 
     public function tambah_data() {
