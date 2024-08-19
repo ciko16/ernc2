@@ -25,6 +25,10 @@ Form Edit Data Kalender
         <option value="Peminjaman" <?= $biaya_layanan['kategori'] == 'Peminjaman' ? 'selected' : '' ?>>Peminjaman</option>
         </select>
     </div>
+    <div class="form-group">
+        <label for="keterangan">Keterangan</label>
+        <input type="text"name="keterangan" value="<?= $biaya_layanan['keterangan']; ?>" class="form-control" id="keterangan" placeholder="Keterangan">
+    </div>
     <a href="<?= base_url('BiayaLayanan') ?>" class="btn btn-danger">Tutup</a>
     <button type="submit" name="edit" class="btn btn-primary float-right">Edit Data</button>
 </form>

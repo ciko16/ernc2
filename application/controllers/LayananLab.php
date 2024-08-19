@@ -84,6 +84,7 @@ class LayananLab extends CI_Controller
         $this->load->view("layananlab/vw_detail_layananlab", $data);
         $this->load->view("layout/footer");
     }
+    
     public function tambah()
 {
     $data['judul'] = "Halaman Tambah Layanan Lab";

@@ -16,7 +16,7 @@ Form Tambah Data Biaya Layanan
     </div>
     <div class="form-group">
         <label for="biaya">Biaya</label>
-        <input type="text"name="biaya" class="form-control" id="biaya" placeholder="Biaya">
+        <input type="number" name="biaya" class="form-control" id="biaya" placeholder="Biaya">
         <?= form_error('biaya', '<small class="text-danger pl-3">', '</small>');?>
     </div>
     <div class="form-group">
@@ -26,6 +26,11 @@ Form Tambah Data Biaya Layanan
             <option>Layanan</option>
             <option>Peminjaman</option>
         </select>
+        <?= form_error('kategori', '<small class="text-danger pl-3">', '</small>');?>
+    </div>
+    <div class="form-group">
+        <label for="keterangan">keterangan</label>
+        <input type="text"name="keterangan" class="form-control" id="keterangan" placeholder="Keterangan">
     </div>
     <a href="<?= base_url('BiayaLayanan') ?>" class="btn btn-danger">Tutup</a>
     <button type="submit" name="tambah" class="btn btn-primary float-right">Tambah Data</button>

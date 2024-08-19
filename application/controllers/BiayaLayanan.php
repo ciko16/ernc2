@@ -78,11 +78,13 @@ public function tambah()
         $keperluan = $this->input->post('keperluan');
         $biaya = $this->input->post('biaya');
         $kategori = $this->input->post('kategori');
+        $keterangan = $this->input->post('keterangan');
 
         $data = array (
             'keperluan' => $keperluan,
             'biaya' => $biaya,
             'kategori' => $kategori,
+            'keterangan' => $keterangan
         );
         $this->Biaya_model->insert($data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
@@ -98,6 +100,17 @@ public function tambah()
         Biaya Layanan Berhasil Dihapus!</div>');
         redirect('BiayaLayanan');
     }
+
+    public function detail($id)
+    {
+        $data['judul'] = "Halaman Detail Biaya Layanan Lab";
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['biaya_layanan'] = $this->Biaya_model->getById($id);
+        $this->load->view("layout/header", $data);
+        $this->load->view("biayalayanan/vw_detail_biayalayanan", $data);
+        $this->load->view("layout/footer");
+    }
+
     public function edit($id)
 {
     $data['judul'] = "Edit Data Biaya Layanan";
@@ -120,11 +133,13 @@ public function tambah()
         $keperluan = $this->input->post('keperluan');
         $biaya = $this->input->post('biaya');
         $kategori = $this->input->post('kategori');
+        $keterangan = $this->input->post('keterangan');
 
         $data = array (
             'keperluan' => $keperluan,
             'biaya' => $biaya,
             'kategori' => $kategori,
+            'keterangan' => $keterangan,
         );
         $id = $this->input->post('id');
             $this->Biaya_model->update(['id'=>$id], $data);

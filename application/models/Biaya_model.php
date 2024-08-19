@@ -54,12 +54,14 @@ class Biaya_model extends CI_Model
         $this->db->like('keperluan', $keyword);
         $this->db->or_like('biaya', $keyword);
         $this->db->or_like('kategori', $keyword);
+        $this->db->or_like('keterangan', $keyword);
         return $this->db->get()->result_array();
     }
     public function count_keyword($keyword) {
         $this->db->like('keperluan', $keyword);
         $this->db->or_like('biaya', $keyword);
         $this->db->or_like('kategori', $keyword);
+        $this->db->or_like('keterangan', $keyword);
         return $this->db->get('biaya_layanan')->num_rows();
     }
 }
