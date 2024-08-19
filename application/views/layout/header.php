@@ -34,6 +34,7 @@
     position: sticky;
     top: 0;
     height: 100vh; /* Full viewport height */
+    /* overflow-y: auto; Enable vertical scrolling inside the sidebar */
     }   
 
     </style>

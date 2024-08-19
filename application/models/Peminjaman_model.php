@@ -68,7 +68,14 @@ class Peminjaman_model extends CI_Model
         $this->db->or_like('no_whatsapp', $keyword);
         $this->db->or_like('bukti_pembayaran', $keyword);
         $this->db->or_like('status', $keyword);
-        return $this->db->get('peminjaman_lab')->num_rows();
+        $query = $this->db->get('peminjaman_lab');
+
+    if ($query) {
+        return $query->num_rows();
+    } else {
+        // Handle the error case, return 0 or log the error
+        return 0;
+    }
     }
     public function tpeminjaman() 
     {
