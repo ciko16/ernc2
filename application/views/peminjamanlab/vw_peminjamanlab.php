@@ -54,7 +54,7 @@
                   <span>Tidak ada file bukti pembayaran</span>
                 <?php endif; ?>   -->
               <!-- </td> -->
-        <td class="status-column">
+        <td>
                 <!-- memberikan warna pada kondisi status tertentu -->
                 <?php 
                 $status_class = '';
@@ -63,9 +63,9 @@
                 } elseif ($us['status_peminjaman'] == 'Selesai') {
                     $status_class = 'text-success';
                 } elseif ($us['status_peminjaman'] == 'Meminjam') {
-                    $status_class = 'text-warning';
+                  $status_class = 'text-warning';
                 } else {
-                    $status_class = 'text-secondary';
+                  $status_class = 'text-disabled';
                 }
                 ?>
                 <span class="<?= $status_class ?>"><?= $us['status_peminjaman']; ?></span>
