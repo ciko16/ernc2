@@ -15,6 +15,7 @@
                         <th scope="col">Keperluan</th>
                         <th scope="col">Biaya</th>
                         <th scope="col">Kategori</th>
+                        <th scope="col">Keterangan</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -25,6 +26,7 @@
                         <td><?= $bl['keperluan']; ?></td>
                         <td><?= 'Rp ' . number_format($bl['biaya'], 0, ',', '.'); ?></td>
                         <td><?= $bl['kategori']; ?></td>
+                        <td><?= $bl['keterangan']; ?></td>
                     </tr>
                 <?php $i++; ?>
                 <?php endforeach; ?>
