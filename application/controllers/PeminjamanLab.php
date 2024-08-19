@@ -259,7 +259,7 @@ Peminjaman Lab Berhasil Dihapus!</div>');
     
         // Mendapatkan hasil pencarian dengan pagination
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-        $data['peminjaman_lab'] = $this->Peminjaman->get_keyword($keyword, $config['per_page'], $page);
+        $data['peminjaman_lab'] = $this->Peminjaman_model->get_keyword($keyword, $config['per_page'], $page);
         $data['pagination'] = $this->pagination->create_links();
     
         // Load views
