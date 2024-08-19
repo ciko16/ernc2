@@ -38,7 +38,7 @@
         <td><?= 'Rp ' . number_format($bl['biaya'], 0, ',', '.'); ?></td>
         <td><?= $bl['kategori']; ?></td>
         <td>
-            <a href="<?= base_url('BiayaLayanan/detail/'.$bl['id']);?>" class="badge badge-info">Detail</a>
+            <a href="<?= base_url('BiayaLayanan/detail/'.$bl['id']);?>" class="text-info">Detail</a>
             <a href="<?= base_url('BiayaLayanan/edit/'.$bl['id']);?>" class="text-warning">Edit</a>
             <a href="<?= base_url('BiayaLayanan/hapus/'.$bl['id']);?>" class="text-danger" onclick="javascript: return confirm('Anda yakin untuk menghapus data?')">Hapus</a>
         </td>
