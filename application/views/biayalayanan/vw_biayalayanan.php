@@ -47,8 +47,13 @@
     <?php endforeach; ?>
     </tbody>
 </table>
-                </div>
-</div>
+<div class="row">
+        <div class="col">
+          <?php if(isset($pagination)) echo $pagination; ?>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
                 <!-- /.container-fluid -->
 
