@@ -36,14 +36,14 @@ class Dashboard_model extends CI_Model {
         // Menghitung total pendapatan dari tabel layanan_lab
         $this->db->select_sum('biaya'); // Asumsikan kolom pendapatan bernama 'pendapatan'
         $this->db->from('layanan_lab');
-        $this->db->where('status', 'Selesai');
+        $this->db->where('status', 'selesai');
         $query_layanan = $this->db->get();
         $total_layanan = $query_layanan->row()->pendapatan;
 
         // Menghitung total pendapatan dari tabel peminjaman_lab
         $this->db->select_sum('biaya'); // Asumsikan kolom pendapatan bernama 'pendapatan'
         $this->db->from('peminjaman_lab');
-        $this->db->where('status_peminjaman', 'Selesai');
+        $this->db->where('status_peminjaman', 'selesai');
         $query_peminjaman = $this->db->get();
         $total_peminjaman = $query_peminjaman->row()->pendapatan;
 
