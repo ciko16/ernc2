@@ -34,18 +34,20 @@ class Dashboard_model extends CI_Model {
 
     public function get_total_pendapatan_by_status() {
         // Menghitung total pendapatan dari tabel layanan_lab
-        $this->db->select_sum('biaya'); // Asumsikan kolom pendapatan bernama 'pendapatan'
+        $this->db->select_sum('biaya'); // Pastikan nama kolom sesuai
         $this->db->from('layanan_lab');
-        $this->db->where('status', 'selesai');
+        $this->db->where('status', 'Selesai');
         $query_layanan = $this->db->get();
-        $total_layanan = $query_layanan->row()->pendapatan;
+        $result_layanan = $query_layanan->row();
+        $total_layanan = $result_layanan ? $result_layanan->pendapatan : 0;
 
         // Menghitung total pendapatan dari tabel peminjaman_lab
-        $this->db->select_sum('biaya'); // Asumsikan kolom pendapatan bernama 'pendapatan'
+        $this->db->select_sum('biaya'); // Pastikan nama kolom sesuai
         $this->db->from('peminjaman_lab');
-        $this->db->where('status_peminjaman', 'selesai');
+        $this->db->where('status', 'Selesai');
         $query_peminjaman = $this->db->get();
-        $total_peminjaman = $query_peminjaman->row()->pendapatan;
+        $result_peminjaman = $query_peminjaman->row();
+        $total_peminjaman = $result_peminjaman ? $result_peminjaman->pendapatan : 0;
 
         // Menjumlahkan total pendapatan dari kedua tabel
         return $total_layanan + $total_peminjaman;
