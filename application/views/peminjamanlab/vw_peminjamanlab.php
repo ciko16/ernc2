@@ -43,7 +43,23 @@
         <td><?= $us['asal_instansi']; ?></td>
         <td><?= $us['keperluan']; ?></td>
         <td><?= 'Rp ' . number_format($us['biaya'], 0, ',', '.'); ?></td>
-        <td><?= $us['no_whatsapp']; ?></td>
+        <td><?php if(isset($us['no_whatsapp']) && !empty($us['no_whatsapp'])): ?>
+                            <?php
+                            // Ambil nomor WhatsApp dari database
+                            $no_whatsapp = $us['no_whatsapp'];
+                            // Bersihkan nomor dari spasi, tanda, atau karakter yang tidak diperlukan
+                            $no_whatsapp = preg_replace('/[^0-9]/', '', $no_whatsapp);
+
+                            // Jika nomor dimulai dengan 0, ganti dengan kode negara (misal +62 untuk Indonesia)
+                            if (substr($no_whatsapp, 0, 1) == '0'){
+                                $no_whatsapp = '62' . substr($no_whatsapp, 1);
+                            }
+
+                            // URL Whatsapp
+                            $wa_url = "https://wa.me/".$no_whatsapp;
+                            ?>
+                            <a href="<?= $wa_url; ?>" class=" text-primary" target="_blank"><?= $us['no_whatsapp']; ?></a>
+                        <?php endif; ?></td></td>
         <!-- <td> -->
                 <!-- memunculkan teks jika tidak ada file gambar -->
                 <!-- <?php if (!empty($us['bukti_pembayaran'])): ?>
