@@ -33,22 +33,6 @@ class Dashboard_model extends CI_Model {
     }
 
     public function get_total_pendapatan_by_status() {
-        <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-class Dashboard_model extends CI_Model {
-
-    public function __construct() {
-        parent::__construct();
-        $this->load->database();
-    }
-
-    /**
-     * Mengambil total pendapatan dari tabel layanan_lab dan peminjaman_lab dengan status 'Selesai'
-     *
-     * @return float Total pendapatan
-     */
-    public function get_total_pendapatan_by_status() {
         // Menghitung total pendapatan dari tabel layanan_lab
         $this->db->select_sum('biaya'); // Pastikan nama kolom sesuai
         $this->db->from('layanan_lab');
@@ -81,10 +65,6 @@ class Dashboard_model extends CI_Model {
 
         // Menjumlahkan total pendapatan dari kedua tabel
         return $total_layanan + $total_peminjaman;
-    }
-}
-?>
-
     }
 
     public function getByMonthYear() { 
