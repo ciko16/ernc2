@@ -28,13 +28,18 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/header.css'); ?>">
 
     <style>
-        /* Sticky Sidebar agar dinamis ketika di scroll */
+        /* Sticky Sidebar Vertically */
     #accordionSidebar {
     position: -webkit-sticky; /* For Safari */
     position: sticky;
     top: 0;
     height: 100vh; /* Full viewport height */
-    overflow-y: auto; /* Enable scrolling inside the sidebar */
+    overflow-y: auto; /* Enable vertical scrolling inside the sidebar */
+    }   
+
+    /* Prevent horizontal movement */
+    body {
+    overflow-x: hidden;
     }
     </style>
 </head>
