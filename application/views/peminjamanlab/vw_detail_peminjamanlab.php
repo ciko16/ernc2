@@ -75,8 +75,10 @@
                     $status_class = 'text-danger';
                 } elseif ($peminjaman_lab['status_peminjaman'] == 'Selesai') {
                     $status_class = 'text-success';
-                } else {
+                } elseif ($peminjaman_lab['status_peminjaman'] == 'Meminjam') {
                     $status_class = 'text-warning';
+                } else {
+                    $status_class = 'text-secondary';
                 }
                 ?>
                         <div class="col-md-6 <?= $status_class ?>"><?= $peminjaman_lab['status_peminjaman']; ?></div>
