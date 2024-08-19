@@ -25,13 +25,13 @@
                     <div class="row mb-3">
                         <div class="col-md-4 font-weight-bold">Kategori</div>
                         <div class="col-md-2">:</div>
-                        <div class="col-md-6 font-weight-bold"><?= $biaya_layanan['kategori']; ?></div>
+                        <div class="col-md-6"><?= $biaya_layanan['kategori']; ?></div>
                     </div>
 
                     <div class="row mb-3">
                         <div class="col-md-4 font-weight-bold">Keterangan</div>
                         <div class="col-md-2">:</div>
-                        <div class="col-md-6 font-weight-bold">
+                        <div class="col-md-6">
                             <?= !empty($biaya_layanan['keterangan']) ? $biaya_layanan['keterangan'] : 'Tidak ada keterangan'; ?></div>
                     </div>
 
