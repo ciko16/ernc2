@@ -33,11 +33,34 @@ class Dashboard_model extends CI_Model {
     }
 
     public function get_total_pendapatan_by_status() {
+        <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Dashboard_model extends CI_Model {
+
+    public function __construct() {
+        parent::__construct();
+        $this->load->database();
+    }
+
+    /**
+     * Mengambil total pendapatan dari tabel layanan_lab dan peminjaman_lab dengan status 'Selesai'
+     *
+     * @return float Total pendapatan
+     */
+    public function get_total_pendapatan_by_status() {
         // Menghitung total pendapatan dari tabel layanan_lab
         $this->db->select_sum('biaya'); // Pastikan nama kolom sesuai
         $this->db->from('layanan_lab');
         $this->db->where('status', 'Selesai');
         $query_layanan = $this->db->get();
+
+        if ($query_layanan === FALSE) {
+            // Log error query
+            log_message('error', 'Query error: ' . $this->db->last_query());
+            return 0;
+        }
+
         $result_layanan = $query_layanan->row();
         $total_layanan = $result_layanan ? $result_layanan->biaya : 0;
 
@@ -46,11 +69,22 @@ class Dashboard_model extends CI_Model {
         $this->db->from('peminjaman_lab');
         $this->db->where('status', 'Selesai');
         $query_peminjaman = $this->db->get();
+
+        if ($query_peminjaman === FALSE) {
+            // Log error query
+            log_message('error', 'Query error: ' . $this->db->last_query());
+            return 0;
+        }
+
         $result_peminjaman = $query_peminjaman->row();
         $total_peminjaman = $result_peminjaman ? $result_peminjaman->biaya : 0;
 
         // Menjumlahkan total pendapatan dari kedua tabel
         return $total_layanan + $total_peminjaman;
+    }
+}
+?>
+
     }
 
     public function getByMonthYear() { 
