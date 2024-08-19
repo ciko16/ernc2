@@ -39,7 +39,7 @@ class Dashboard_model extends CI_Model {
         $this->db->where('status', 'Selesai');
         $query_layanan = $this->db->get();
         $result_layanan = $query_layanan->row();
-        $total_layanan = $result_layanan ? $result_layanan->pendapatan : 0;
+        $total_layanan = $result_layanan ? $result_layanan->biaya : 0;
 
         // Menghitung total pendapatan dari tabel peminjaman_lab
         $this->db->select_sum('biaya'); // Pastikan nama kolom sesuai
@@ -47,7 +47,7 @@ class Dashboard_model extends CI_Model {
         $this->db->where('status', 'Selesai');
         $query_peminjaman = $this->db->get();
         $result_peminjaman = $query_peminjaman->row();
-        $total_peminjaman = $result_peminjaman ? $result_peminjaman->pendapatan : 0;
+        $total_peminjaman = $result_peminjaman ? $result_peminjaman->biaya : 0;
 
         // Menjumlahkan total pendapatan dari kedua tabel
         return $total_layanan + $total_peminjaman;
