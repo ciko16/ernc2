@@ -27,6 +27,8 @@ class Dashboard extends CI_Controller {
         $data['peminjaman_by_status'] = $this->Dashboard_model->get_peminjaman_by_status();
         // Mengambil data inventaris berdasarkan ketersediaan
         $data['inventaris_by_ketersediaan'] = $this->Dashboard_model->get_inventaris_by_ketersediaan();
+        // Menghitung total pendapatan keseluruhan
+        $data['total_pendapatan'] = $this->Dashboard_model->get_total_pendapatan_by_status();
         
         // Mengambil data jumlah berdasarkan bulan dari model
         $dataPerBulan = $this->Dashboard_model->getByMonthYear();

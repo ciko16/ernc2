@@ -32,6 +32,25 @@ class Dashboard_model extends CI_Model {
         return $query->result_array();
     }
 
+    public function get_total_pendapatan_by_status() {
+        // Menghitung total pendapatan dari tabel layanan_lab
+        $this->db->select_sum('biaya'); // Asumsikan kolom pendapatan bernama 'pendapatan'
+        $this->db->from('layanan_lab');
+        $this->db->where('status', 'Selesai');
+        $query_layanan = $this->db->get();
+        $total_layanan = $query_layanan->row()->pendapatan;
+
+        // Menghitung total pendapatan dari tabel peminjaman_lab
+        $this->db->select_sum('biaya'); // Asumsikan kolom pendapatan bernama 'pendapatan'
+        $this->db->from('peminjaman_lab');
+        $this->db->where('status_peminjaman', 'Selesai');
+        $query_peminjaman = $this->db->get();
+        $total_peminjaman = $query_peminjaman->row()->pendapatan;
+
+        // Menjumlahkan total pendapatan dari kedua tabel
+        return $total_layanan + $total_peminjaman;
+    }
+
     public function getByMonthYear() { 
         // mengekstrak bulan dari kolom tanggal dengan SQL MONTH()
         $this->db->select('YEAR(tanggal) as tahun, MONTH(tanggal) as bulan, COUNT(*) as jumlah');

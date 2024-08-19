@@ -197,8 +197,9 @@
                 <canvas id="pendapatanChart" width="400" height="200"></canvas>
             </div>
             <hr>
-            <div class="total-pendapatan">
-                <h6 class="font-weight-bold">Total Pendapatan: <span id="totalPendapatan"></span></h6>
+            <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Pendapatan: </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $total_pendapatan; ?></div>
             </div>
             <p>Klik pada kotak di atas untuk menampilkan salah satu data dari Pendapatan Layanan dan Peminjaman</p>
         </div>
