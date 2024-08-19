@@ -137,7 +137,11 @@
                                     <?php foreach ($peminjaman_by_status as $status): ?>
                                         <li class="list-group-item d-flex justify-content-between align-items-center">
                                             <?= $status['status_peminjaman']; ?>
-                                            <span class="badge <?= $status['status_peminjaman'] == 'Selesai' ? 'status-selesai' : ($status['status_peminjaman'] == 'Ditolak' ? 'status-ditolak' : 'status-proses' ) ?> badge-pill"><?= $status['count']; ?></span>
+                                            <span class="badge <?= 
+                                              $status['status_peminjaman'] == 'Selesai' ? 'status_peminjaman-selesai' : 
+                                              ($status['status_peminjaman'] == 'Ditolak' ? 'status_peminjaman-ditolak' : 
+                                              ($status['status_peminjaman'] == 'Menunggu Konfirmasi' ? 'text-secondary' : 'status_peminjaman-proses')) 
+                                              ?> badge-pill"><?= $status['count']; ?></span>
                                         </li>
                                     <?php endforeach; ?>
                                 </div>

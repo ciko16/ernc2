@@ -13,8 +13,10 @@ peminjamanData.forEach(function(status_peminjaman) {
         backgroundColors.push('#87b753');
     } else if (status_peminjaman.status_peminjaman === 'Ditolak') {
         backgroundColors.push('#ff2400');
-    } else {
+    } else if (status_peminjaman.status_peminjaman === 'Meminjam'){
         backgroundColors.push('#ffdb58');
+    } else {
+        backgroundColors.push('#d3d3d3');
     }
 });
 
