@@ -56,8 +56,7 @@ class Peminjaman_model extends CI_Model
         $this->db->or_like('keperluan', $keyword);
         $this->db->or_like('biaya', $keyword);
         $this->db->or_like('no_whatsapp', $keyword);
-        $this->db->or_like('bukti_pembayaran', $keyword);
-        $this->db->or_like('status', $keyword);
+        $this->db->or_like('status_peminjaman', $keyword);
         return $this->db->get()->result_array();
     }
     public function count_keyword($keyword) {
@@ -66,8 +65,7 @@ class Peminjaman_model extends CI_Model
         $this->db->or_like('keperluan', $keyword);
         $this->db->or_like('biaya', $keyword);
         $this->db->or_like('no_whatsapp', $keyword);
-        $this->db->or_like('bukti_pembayaran', $keyword);
-        $this->db->or_like('status', $keyword);
+        $this->db->or_like('status_peminjaman', $keyword);
         return $this->db->get('peminjaman_lab')->num_rows();
     }
     public function tpeminjaman() 
