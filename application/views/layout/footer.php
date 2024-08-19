@@ -124,13 +124,14 @@
  <script src="<?= base_url('assets/js/idle-logout.js'); ?>"></script>
  <script>
     // Fungsi untuk menghitung dan menampilkan total pendapatan
-    function displayTotalPendapatan(pendapatanLayananData, pendapatanPeminjamanData) {
-        const totalPendapatan = pendapatanLayananData + pendapatanPeminjamanData;
+    function displayTotalPendapatan(pendapatanLayanan, pendapatanPeminjaman) {
+        const totalPendapatan = pendapatanLayanan + pendapatanPeminjaman;
         document.getElementById('totalPendapatan').textContent = totalPendapatan.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
     }
 
+
     // Panggil fungsi untuk menampilkan total pendapatan
-    displayTotalPendapatan(pendapatanLayananData, pendapatanPeminjamanData);
+    displayTotalPendapatan(pendapatanLayanan, pendapatanPeminjaman);
 </script>
 </body>
 </html>
