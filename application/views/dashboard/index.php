@@ -187,19 +187,23 @@
          </div>
 
          <!-- Bar Chart -->
-         <div class=" col-lg-12">
-         <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-success">Grafik Pendapatan</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-bar chart-container">
-                                    <canvas id="pendapatanChart" width="400" height="200"></canvas>
-                                    </div>
-                                    <hr>
-                                    Klik pada kotak diatas untuk menampilkan salah satu data dari Pendapatan Layanan dan Peminjaman
-                                </div>
-                            </div>
-         </div>
+<div class="col-lg-12">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-success">Grafik Pendapatan</h6>
+        </div>
+        <div class="card-body">
+            <div class="chart-bar chart-container">
+                <canvas id="pendapatanChart" width="400" height="200"></canvas>
+            </div>
+            <hr>
+            <div class="total-pendapatan">
+                <h6 class="font-weight-bold">Total Pendapatan: <span id="totalPendapatan"></span></h6>
+            </div>
+            <p>Klik pada kotak di atas untuk menampilkan salah satu data dari Pendapatan Layanan dan Peminjaman</p>
+        </div>
+    </div>
+</div>
+
     </div>
 </div>
