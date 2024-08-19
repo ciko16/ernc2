@@ -1,3 +1,11 @@
+/* Sticky Sidebar agar dinamis ketika di scroll */
+#accordionSidebar {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Enable scrolling inside the sidebar */
+}
 body {
     font-size: 14px;
 }
