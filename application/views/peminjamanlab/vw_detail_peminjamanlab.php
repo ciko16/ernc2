@@ -67,6 +67,12 @@
                     </div>
 
                     <div class="row mb-3">
+                        <div class="col-md-4 font-weight-bold">Tanggal Input</div>
+                        <div class="col-md-2">:</div>
+                        <div class="col-md-6 font-weight-bold"><?=date('d F Y', strtotime($peminjaman_lab['created_date'])); ?></div>
+                    </div>
+
+                    <div class="row mb-3">
                         <div class="col-md-4 font-weight-bold">Status</div>
                         <div class="col-md-2">:</div>
                         <?php 
@@ -82,12 +88,6 @@
                 }
                 ?>
                         <div class="col-md-6 <?= $status_class ?>"><?= $peminjaman_lab['status_peminjaman']; ?></div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col-md-4 font-weight-bold">Tanggal Input</div>
-                        <div class="col-md-2">:</div>
-                        <div class="col-md-6 font-weight-bold"><?=date('d F Y', strtotime($peminjaman_lab['created_date'])); ?></div>
                     </div>
 
                 </div>
