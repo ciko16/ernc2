@@ -48,9 +48,7 @@ class Peminjaman_model extends CI_Model
     public function get_data($limit, $start) {
         return $this->db->get('peminjaman_lab', $limit, $start)->result();
     }
-    public function get_keyword($keyword) {
-        $this->db->select('*');
-        $this->db->from('peminjaman_lab');
+    public function get_keyword($keyword, $limit, $start) {
         $this->db->like('nama', $keyword);
         $this->db->or_like('asal_instansi', $keyword);
         $this->db->or_like('keperluan', $keyword);
@@ -58,8 +56,19 @@ class Peminjaman_model extends CI_Model
         $this->db->or_like('no_whatsapp', $keyword);
         $this->db->or_like('bukti_pembayaran', $keyword);
         $this->db->or_like('status', $keyword);
-        return $this->db->get()->result_array();
+        
+        $this->db->limit($limit, $start);
+        $query = $this->db->get('peminjaman_lab');
+    
+        if ($query) {
+            return $query->result_array();
+        } else {
+            // Debugging
+            log_message('error', 'Query failed: ' . $this->db->last_query());
+            return [];
+        }
     }
+    
     public function count_keyword($keyword) {
         $this->db->like('nama', $keyword);
         $this->db->or_like('asal_instansi', $keyword);
