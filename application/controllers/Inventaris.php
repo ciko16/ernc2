@@ -115,7 +115,7 @@ class Inventaris extends CI_Controller
     }
 
     public function edit($id) {
-        $data['judul'] = "Halaman Tambah Inventaris";
+        $data['judul'] = "Halaman Edit Inventaris";
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['inventaris'] = $this->Inventaris_model->getById($id);
         $this->form_validation->set_rules('nama','Nama','required',[
