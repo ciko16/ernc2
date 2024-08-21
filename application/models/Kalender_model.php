@@ -84,9 +84,18 @@ class Kalender_model extends CI_Model {
     $cal_data = array();
     foreach ($query->result() as $row) {
         $calendar_date = date("j", strtotime($row->tanggal)); // Ambil tanggal hari saja
-        $day_url = base_url("kalender/detail/" . $row->tanggal); // buat URL ke halaman detail
-        // Gabungkan 'isi' dan 'booking' dengan HTML yang mengandung link
-        $cal_data[(int)$calendar_date] = '<a href="' . $day_url . '"><div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $row->booking . '</div></a>';
+        // $day_url = base_url("kalender/detail/" . $row->tanggal); // buat URL ke halaman detail
+        // // Gabungkan 'isi' dan 'booking' dengan HTML yang mengandung link
+        // $cal_data[(int)$calendar_date] = '<a href="' . $day_url . '"><div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $row->booking . '</div></a>';
+
+        // Jika isi atau booking tersedia, tambahkan link
+        if (!empty($row->isi) || !empty($row->booking)) {
+            $day_url = base_url("kalender/detail/" . $row->tanggal); // buat URL ke halaman detail
+            $cal_data[(int)$calendar_date] = '<a href="' . $day_url . '"><div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $row->booking . '</div></a>';
+        } else {
+            // jika tidak ada isi atau booking, tampilkan tanggal tanpa link
+            $cal_data[(int)$calendar_date] = '<div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $row->booking . '</div>';
+        }
     }
 
     return $cal_data;
