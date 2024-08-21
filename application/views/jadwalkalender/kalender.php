@@ -31,12 +31,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="container px-3 my-3">
 <div class="card">
   <div class="card-body">
-  <h5 class="card-title text-center">Kalender Lab ERNC<sup>2</sup></h5>
-    <?php if (isset($kalender)) { 
-        echo $kalender; 
-    } else { 
-        echo "Kalender tidak tersedia.";
-    } ?>
+    <h5 class="card-title text-center">Kalender Lab ERNC<sup>2</sup></h5>
+    <?php echo $kalender; ?>
     <a>Keterangan: Huruf Tipis menunjukkan apa yang dipinjam</a>
   </div>
 </div>
