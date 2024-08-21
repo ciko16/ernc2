@@ -30,7 +30,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- dropdown kalender -->
     <form id="calendarForm" action="<?= base_url('kalender') ?>" method="GET">
     <div class="form-row">
-        <!-- Pilihan Tahun -->
         <div class="form-group col-md-4">
             <label for="year">Tahun</label>
             <select class="form-control" id="year" name="year">
@@ -40,7 +39,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </select>
         </div>
 
-        <!-- Pilihan Bulan -->
         <div class="form-group col-md-4">
             <label for="month">Bulan</label>
             <select class="form-control" id="month" name="month">
@@ -50,12 +48,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </select>
         </div>
 
-        <!-- Tombol Submit -->
         <div class="form-group col-md-4 align-self-end">
-            <button type="submit" class="btn btn-success">Pilih</button>
+            <button type="submit" class="btn btn-primary">Pilih</button>
         </div>
     </div>
 </form>
+
 
 <div class="container px-3 my-3">
 <div class="card">
