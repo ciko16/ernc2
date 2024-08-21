@@ -88,9 +88,9 @@ class Kalender_model extends CI_Model {
         // Gabungkan tanggal dengan HTML yang mengandung link
         $cal_data[(int)$calendar_date] = '<a href="' . $day_url . '">'
                                         . '<div class="day_num">' . $calendar_date . '</div>'
-                                        . '</a>'
-                                        . '<div class="calendar-isi">' . $row->isi . '</div>'
-                                        . '<div class="calendar-booking">' . $row->booking . '</div>';
+                                        . '</a>';
+                                        // . '<div class="calendar-isi">' . $row->isi . '</div>'
+                                        // . '<div class="calendar-booking">' . $row->booking . '</div>';
     }
 
     return $cal_data;
