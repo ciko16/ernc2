@@ -67,9 +67,9 @@ class Kalender_model extends CI_Model {
         $data = $this->get_calender_data($year, $month);
 
         foreach ($data as $date => $content) {
-           // Buat link pada tanggal ke metode detail
-           $data[$date] = '<a href="'.base_url('kalender/detail/'.$year.'-'.$month.'-'.$date).'">'.$date.'</a>';
-        }
+        // Format URL dengan tahun dan bulan
+        $data[$date] = '<a href="'.base_url('kalender/detail/'.$year.'/'.$month.'/'.$date).'">'.$date.'</a>';
+    }
 
     return $this->calendar->generate($year, $month, $data);
     }
@@ -126,11 +126,7 @@ class Kalender_model extends CI_Model {
 {
     $query = $this->db->where('tanggal', $tanggal)
                       ->get('kalenderbaru');
-    
-    // Debugging
-    var_dump($query->row()); die();
-
-    return $query->row();
+    return $query->row(); // Kembalikan satu baris data
 }
 
 }
