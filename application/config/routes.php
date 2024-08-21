@@ -53,5 +53,3 @@ $route['default_controller'] = 'Home';
 $route['admin'] = 'Auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['kalender/detail/(:num)/(:num)/(:num)'] = 'kalender/detail/$1/$2/$3';
-

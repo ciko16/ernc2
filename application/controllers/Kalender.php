@@ -22,20 +22,17 @@ class Kalender extends CI_Controller {
         $this->load->view('jadwalkalender/kalender', $data);
     }
 
-    public function detail($year, $month, $day)
+    public function detail($tanggal)
 {
-    // Format tanggal sesuai dengan format di database
-    $tanggal = $year . '-' . $month . '-' . $day;
-
     // Ambil detail data dari model berdasarkan tanggal
     $data['detail'] = $this->Kalender_model->get_detail($tanggal);
-
+    
     if ($data['detail']) {
         // Load view dengan data detail
         $this->load->view('jadwalkalender/detail', $data);
     } else {
-        // Jika tidak ada data untuk tanggal tersebut, redirect ke halaman kalender
-        redirect('kalender');
+        // Jika tidak ada data untuk tanggal tersebut, tampilkan halaman 404
+        show_404();
     }
 }
 
