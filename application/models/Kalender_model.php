@@ -32,13 +32,13 @@ class Kalender_model extends CI_Model {
         {cal_cell_start_today}<td>{/cal_cell_start_today}
         {cal_cell_start_other}<td class="other-month">{/cal_cell_start_other}
 
-        // link data kalender di template
         {cal_cell_content}
-            <a href="' . base_url('kalender/detail/') . '{day}">{day}</a>
+            <div class="day_num filled">{day}</div>
+            <div class="content">{content}</div>
         {/cal_cell_content}
-
         {cal_cell_content_today}
-            <a href="' . base_url('kalender/detail/') . '{day}" class="highlight">{day}</a>
+        <div class="day_num highlight filled">{day}</div>
+        <div class="content">{content}</div>
         {/cal_cell_content_today}
 
         {cal_cell_no_content}
@@ -63,20 +63,9 @@ class Kalender_model extends CI_Model {
 
     public function getcalendar($year, $month)
     {
-        $query = $this->db
-        ->select('tanggal, isi, booking')
-        ->from('kalenderbaru')
-        ->like('tanggal', "$year-$month", 'after')
-        ->get();
-
-        $cal_data = array();
-        foreach ($query->result() as $row) {
-           $calendar_date = date("j", strtotime($row->tanggal)); // Ambil tanggal hari saja
-           $day_url = base_url("kalender/detail/" . $row->tanggal); // Buat URL ke halaman detail
-           // Gabungkan 'isi' dan 'booking' dengan HTML yang mengandung link
-           $cal_data[(int)$calendar_date] = '<a href="' . $day_url . '"><div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $row->booking . '</div></a>';
-        }
-    return $cal_data;
+        $this->load->library('calendar', $this->prefs); // load calendar library
+        $data = $this->get_calender_data($year,$month);
+        return $this->calendar->generate($year, $month, $data);
     }
     
     public function get_calender_data($year, $month)
@@ -95,24 +84,9 @@ class Kalender_model extends CI_Model {
     $cal_data = array();
     foreach ($query->result() as $row) {
         $calendar_date = date("j", strtotime($row->tanggal)); // Ambil tanggal hari saja
-        // $day_url = base_url("kalender/detail/" . $row->tanggal); // buat URL ke halaman detail
-        // // Gabungkan 'isi' dan 'booking' dengan HTML yang mengandung link
-        // $cal_data[(int)$calendar_date] = '<a href="' . $day_url . '"><div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $row->booking . '</div></a>';
-
-        // Jika isi atau booking tersedia, tambahkan link
-        // if (!empty($row->isi) || !empty($row->booking)) {
-        //     $day_url = base_url("kalender/detail/" . $row->tanggal); // buat URL ke halaman detail
-        //     $cal_data[(int)$calendar_date] = '<a href="' . $day_url . '">' . $calendar_date . '</a>';
-        // } else {
-            // jika tidak ada data, tampilkan tanggal tanpa link
-        //     $cal_data[(int)$calendar_date] = $calendar_date;
-        // }
-        
-        // Isi data tanpa mengubah tanggal
-        if (!empty($row->isi) || !empty($row->booking)) {
-            // tandai tanggal yang memiliki konten
-            $cal_data[(int)$calendar_date] = true;
-        }
+        $day_url = base_url("kalender/detail/" . $row->tanggal); // buat URL ke halaman detail
+        // Gabungkan 'isi' dan 'booking' dengan HTML yang mengandung link
+        $cal_data[(int)$calendar_date] = '<a href="' . $day_url . '"><div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $row->booking . '</div></a>';
     }
 
     return $cal_data;
@@ -127,16 +101,14 @@ class Kalender_model extends CI_Model {
             'booking' => $data
         ));
     }
-    public function get_detail($tanggal)
-{
-    $query = $this->db
+    public function get_detail($tanggal) {
+        $query = $this->db
         ->select('tanggal, isi, booking')
         ->from('kalenderbaru')
         ->where('tanggal', $tanggal)
         ->get();
 
-    return $query->row(); // Kembalikan satu baris data
-}
-
+        return $query->row();
+    }
 }
 ?>
