@@ -15,6 +15,10 @@ Form Edit Data Kalender
         <input type="date"name="tanggal" value="<?= date('Y-m-d', strtotime($kalenderbaru['tanggal'])); ?>" class="form-control" id="tanggal" placeholder="Tanggal">
     </div>
     <div class="form-group">
+        <label for="booking">Booking</label>
+        <input type="text" name="booking" value="<?= $kalenderbaru['booking']; ?>" class="form-control" id="booking" placeholder="Booking">
+    </div>
+    <div class="form-group">
         <label for="isi">Deskripsi</label>
         <input type="text" name="isi" value="<?= $kalenderbaru['isi']; ?>" class="form-control" id="isi" placeholder="Deskripsi">
     </div>
