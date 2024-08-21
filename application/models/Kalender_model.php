@@ -117,11 +117,8 @@ class Kalender_model extends CI_Model {
         ));
     }
     public function get_detail($tanggal) {
-        $query = $this->db
-        ->select('tanggal, isi, booking')
-        ->from('kalenderbaru')
-        ->where('tanggal', $tanggal)
-        ->get();
+        $this->db->where('tanggal', $tanggal);
+        $query = $this->db->get('kalenderbaru');
 
         return $query->row();
     }
