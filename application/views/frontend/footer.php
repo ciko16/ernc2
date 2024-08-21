@@ -10,6 +10,8 @@
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <!-- Lightbox Javascripts -->
     <script src="<?= base_url('frontend/js/lightbox.js')?>"></script>
+    <!-- slim js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
     <!-- Jquery dataTables js -->
@@ -64,5 +66,17 @@ $(document).ready(function() {
     });
 });
 </script>
+<script>
+    $(document).on('click', '.detail-link', function() {
+        var tanggal = $(this).data('tanggal');
+        var isi = $(this).data('isi');
+        var booking = $(this).data('booking');
+
+        $('#modalTanggal').text(tanggal);
+        $('#modalIsi').text(isi);
+        $('#modalBooking').text(booking);
+    });
+</script>
+
 </body>
 </html>
