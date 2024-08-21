@@ -11,6 +11,17 @@ class Kalender extends CI_Controller {
 
     public function index($year = null, $month = null)
     {
+        // ambil tahun dan bulan dari query string
+        $year = $this->input->get('year') ?? date('Y');
+        $month = $this->input->get('month') ?? date('m');
+
+        // Panggil model untuk mendapatkan data kalender
+        $data['kalender'] = $this->Kalender_model->generate_calendar($year, $month);
+
+        // Variabel untuk menandai pilihan tahun dan bulan yang dipilih
+        $data['selected_year'] = $year;
+        $data['selected_month'] = $month;
+
         $data['kalender'] = $this->Kalender_model->getcalendar($year, $month);
         // $this->load->view('layout/header');
         $this->load->view('jadwalkalender/kalender', $data);

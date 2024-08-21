@@ -27,7 +27,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 
 <body>
-    
+    <!-- dropdown kalender -->
+    <form id="calendarForm" action="<?= base_url('kalender') ?>" method="GET">
+    <div class="form-row">
+        <!-- Pilihan Tahun -->
+        <div class="form-group col-md-4">
+            <label for="year">Tahun</label>
+            <select class="form-control" id="year" name="year">
+                <?php for ($i = date('Y') - 5; $i <= date('Y') + 5; $i++): ?>
+                    <option value="<?= $i ?>" <?= $i == $selected_year ? 'selected' : '' ?>><?= $i ?></option>
+                <?php endfor; ?>
+            </select>
+        </div>
+
+        <!-- Pilihan Bulan -->
+        <div class="form-group col-md-4">
+            <label for="month">Bulan</label>
+            <select class="form-control" id="month" name="month">
+                <?php for ($i = 1; $i <= 12; $i++): ?>
+                    <option value="<?= $i ?>" <?= $i == $selected_month ? 'selected' : '' ?>><?= date("F", mktime(0, 0, 0, $i, 10)) ?></option>
+                <?php endfor; ?>
+            </select>
+        </div>
+
+        <!-- Tombol Submit -->
+        <div class="form-group col-md-4 align-self-end">
+            <button type="submit" class="btn btn-success">Pilih</button>
+        </div>
+    </div>
+</form>
+
 <div class="container px-3 my-3">
 <div class="card">
   <div class="card-body">

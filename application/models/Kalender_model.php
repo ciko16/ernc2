@@ -110,5 +110,15 @@ class Kalender_model extends CI_Model {
 
         return $query->row();
     }
+    public function generate_calendar($year, $month)
+{
+    // Ambil data berdasarkan tahun dan bulan
+    $cal_data = $this->get_calender_data($year, $month);
+
+    // Inisialisasi library kalender dengan data dan preferensi template
+    $this->load->library('calendar', $this->prefs);
+    return $this->calendar->generate($year, $month, $cal_data);
+}
+
 }
 ?>
