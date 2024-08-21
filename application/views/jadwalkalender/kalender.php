@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -22,48 +24,19 @@
         }
     </style>
 </head>
+</head>
+
 <body>
-    
 <div class="container px-3 my-3">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title text-center">Kalender Lab ERNC<sup>2</sup></h5>
-
-            <!-- Form dropdown kalender dimasukkan di sini -->
-            <form id="calendarForm" action="<?= base_url('kalender') ?>" method="GET">
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="year">Tahun</label>
-                        <select class="form-control" id="year" name="year">
-                            <?php for ($i = date('Y') - 5; $i <= date('Y') + 5; $i++): ?>
-                                <option value="<?= $i ?>" <?= isset($selected_year) && $i == $selected_year ? 'selected' : '' ?>><?= $i ?></option>
-                            <?php endfor; ?>
-                        </select>
-                    </div>
-
-                    <div class="form-group col-md-4">
-                        <label for="month">Bulan</label>
-                        <select class="form-control" id="month" name="month">
-                            <?php for ($i = 1; $i <= 12; $i++): ?>
-                                <option value="<?= $i ?>" <?= isset($selected_month) && $i == $selected_month ? 'selected' : '' ?>><?= date("F", mktime(0, 0, 0, $i, 10)) ?></option>
-                            <?php endfor; ?>
-                        </select>
-                    </div>
-
-                    <div class="form-group col-md-4 align-self-end">
-                        <button type="submit" class="btn btn-success">Pilih</button>
-                    </div>
-                </div>
-            </form>
-
-            <!-- Kalender ditampilkan di sini -->
-            <?= isset($kalender) ? $kalender : '' ?>
-            <a>Klik 'Detail' untuk menampilkan detail data dari tanggal</a>
-        </div>
-    </div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title text-center">Kalender Lab ERNC<sup>2</sup></h5>
+    <?php echo $kalender; ?>
+    <a>Klik 'Detail' untuk menampilkan detail data dari tanggal</a>
+  </div>
 </div>
-
-<!-- Modal untuk menampilkan detail -->
+</div>
+<!-- untuk menampilkan pop-up -->
 <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -86,7 +59,7 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
