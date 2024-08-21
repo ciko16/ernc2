@@ -91,10 +91,10 @@ class Kalender_model extends CI_Model {
         // Jika isi atau booking tersedia, tambahkan link
         if (!empty($row->isi) || !empty($row->booking)) {
             $day_url = base_url("kalender/detail/" . $row->tanggal); // buat URL ke halaman detail
-            $cal_data[(int)$calendar_date] = '<a href="' . $day_url . '"><div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $row->booking . '</div></a>';
+            $cal_data[(int)$calendar_date] = '<a href="' . $day_url . '">' . $calendar_date . '</a>'
         } else {
-            // jika tidak ada isi atau booking, tampilkan tanggal tanpa link
-            $cal_data[(int)$calendar_date] = '<div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $row->booking . '</div>';
+            // jika tidak ada data, tampilkan tanggal tanpa link
+            $cal_data[(int)$calendar_date] = $calendar_date;
         }
     }
 
