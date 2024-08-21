@@ -85,12 +85,12 @@ class Kalender_model extends CI_Model {
     foreach ($query->result() as $row) {
         $calendar_date = date("j", strtotime($row->tanggal)); // Ambil tanggal hari saja
         $day_url = base_url("kalender/detail/" . $row->tanggal); // buat URL ke halaman detail
-        // Gabungkan 'isi' dan 'booking' dengan HTML yang mengandung link
-        $cal_data[(int)$calendar_date] = array(
-            'day_url' => $day_url,
-            'content' => '<div class="calendar-isi">' . $row->isi . '</div>'
-                        . '<div class="calendar-booking">' . $row->booking . '</div>'
-        );
+        // Gabungkan tanggal dengan HTML yang mengandung link
+        $cal_data[(int)$calendar_date] = '<a href="' . $day_url . '">'
+                                        . '<div class="day_num">' . $calendar_date . '</div>'
+                                        . '</a>'
+                                        . '<div class="calendar-isi">' . $row->isi . '</div>'
+                                        . '<div class="calendar-booking">' . $row->booking . '</div>';
     }
 
     return $cal_data;
