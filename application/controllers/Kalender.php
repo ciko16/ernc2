@@ -23,9 +23,6 @@ class Kalender extends CI_Controller {
         $data['selected_month'] = $month;
 
         $data['kalender'] = $this->Kalender_model->getcalendar($year, $month);
-        echo 'Selected Year: ' . $data['selected_year'];
-        echo 'Selected Month: ' . $data['selected_month'];
-        exit;
 
         $this->load->view('jadwalkalender/kalender', $data);
     }
