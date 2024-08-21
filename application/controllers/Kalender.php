@@ -16,5 +16,17 @@ class Kalender extends CI_Controller {
         $this->load->view('jadwalkalender/kalender', $data);
         // $this->load->view('layout/footer');
     }
+    public function detail($tanggal) {
+        // ambil detail data dari model berdasarkan tanggal
+        $data['detail'] = $this->Kalender_model->get_detail($tanggal);
+
+        if ($data['detail']) {
+            // load view dengan data detail
+            $this->load->view('jadwalkalender/detail', $data);
+        } else {
+            // Jika tidak ada data untuk tanggal tersebut, tampilkan halaman kalender
+            $this->load->view('jadwalkalender/kalender', $data);
+        }
+    }
 }
 ?>

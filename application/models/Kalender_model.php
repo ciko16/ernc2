@@ -84,8 +84,9 @@ class Kalender_model extends CI_Model {
     $cal_data = array();
     foreach ($query->result() as $row) {
         $calendar_date = date("j", strtotime($row->tanggal)); // Ambil tanggal hari saja
-        // Gabungkan 'isi' dan 'booking' dengan HTML
-        $cal_data[(int)$calendar_date] = '<div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $row->booking . '</div>';
+        $day_url = base_url("kalender/detail/" . $row->tanggal); // buat URL ke halaman detail
+        // Gabungkan 'isi' dan 'booking' dengan HTML yang mengandung link
+        $cal_data[(int)$calendar_date] = '<a href="' . $day_url . '"><div class="calendar-isi">' . $row->isi . '</div><div class="calendar-booking">' . $row->booking . '</div></a>';
     }
 
     return $cal_data;
@@ -99,6 +100,15 @@ class Kalender_model extends CI_Model {
             'isi' => $data,
             'booking' => $data
         ));
+    }
+    public function get_detail($tanggal) {
+        $query = $this->db
+        ->select('tanggal, isi, booking')
+        ->from('kalenderbaru')
+        ->where('tanggal', $tanggal)
+        ->get();
+
+        return $query->row();
     }
 }
 ?>
