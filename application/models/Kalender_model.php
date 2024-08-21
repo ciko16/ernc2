@@ -33,11 +33,11 @@ class Kalender_model extends CI_Model {
         {cal_cell_start_other}<td class="other-month">{/cal_cell_start_other}
 
         {cal_cell_content}
-            <div class="day_num filled"><a href="{day_url}">{day}</a></div>
+            <div class="day_num filled"><a href="{calendar_date}">{day}</a></div>
             <div class="content">{content}</div>
         {/cal_cell_content}
         {cal_cell_content_today}
-            <div class="day_num highlight filled"><a href="{day_url}">{day}</a></div>
+            <div class="day_num highlight filled"><a href="{calendar_date}">{day}</a></div>
             <div class="content">{content}</div>
         {/cal_cell_content_today}
 
@@ -86,7 +86,7 @@ class Kalender_model extends CI_Model {
         $calendar_date = date("j", strtotime($row->tanggal)); // Ambil tanggal hari saja
         $day_url = base_url("kalender/detail/" . $row->tanggal); // buat URL ke halaman detail
         // Gabungkan tanggal dengan HTML yang mengandung link
-        $cal_data[(int)$calendar_date] = '<a href="' . $day_url . '">';
+        $cal_data[(int)$calendar_date] = '<a href="' . $calendar_date . '">';
                                         // . '<div class="day_num">' . $calendar_date . '</div>'
                                         // . '</a>'
                                         // . '<div class="calendar-isi">' . $row->isi . '</div>'
