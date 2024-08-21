@@ -32,13 +32,13 @@ class Kalender_model extends CI_Model {
         {cal_cell_start_today}<td>{/cal_cell_start_today}
         {cal_cell_start_other}<td class="other-month">{/cal_cell_start_other}
 
-         {cal_cell_content}
-            <div class="day_num filled">{day}</div>
+        {cal_cell_content}
+            <div class="day_num filled"><a href="{kalender/detail}">{day}</a></div>
             <div class="content">{content}</div>
         {/cal_cell_content}
         {cal_cell_content_today}
-        <div class="day_num highlight filled">{day}</div>
-        <div class="content">{content}</div>
+            <div class="day_num highlight filled"><a href="{kalender/detail}">{day}</a></div>
+            <div class="content">{content}</div>
         {/cal_cell_content_today}
 
         {cal_cell_no_content}
