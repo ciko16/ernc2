@@ -92,10 +92,10 @@
             <!-- Video card 2-->
             <div class="col-lg-6 col-xl-4 mb-5">
                 <div class="card">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/DvlRRK-8NjM" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/VARz81cOoM4?si=x1AHFnS8P6-rktGp" frameborder="0" allowfullscreen></iframe>
                     <div class="card-body">
-                        <h5 class="card-title">Pengukuhan Guru Besar</h5>
-                        <p class="card-text">Ini deskripsi dari video Guru Besar Prof Erman Taer, S.Si, M.Si</p>
+                        <h5 class="card-title">Memahami Fisika Inti</h5>
+                        <p class="card-text">Ini deskripsi dari video Memahami Fisika Inti</p>
                     </div>
                 </div>
             </div>
