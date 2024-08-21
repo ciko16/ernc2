@@ -25,7 +25,7 @@ class Kalender extends CI_Controller {
             $this->load->view('jadwalkalender/detail', $data);
         } else {
             // Jika tidak ada data untuk tanggal tersebut, tampilkan halaman kalender
-            // $this->load->view('jadwalkalender/kalender');
+            $this->load->view('jadwalkalender/kalender');
         }
     }
 }
