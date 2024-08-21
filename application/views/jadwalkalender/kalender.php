@@ -29,37 +29,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
     <!-- dropdown kalender -->
     <form id="calendarForm" action="<?= base_url('kalender') ?>" method="GET">
-    <div class="form-row">
-        <div class="form-group col-md-4">
-            <label for="year">Tahun</label>
-            <select class="form-control" id="year" name="year">
-                <?php for ($i = date('Y') - 5; $i <= date('Y') + 5; $i++): ?>
-                    <option value="<?= $i ?>" <?= $i == $selected_year ? 'selected' : '' ?>><?= $i ?></option>
-                <?php endfor; ?>
-            </select>
-        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="year">Tahun</label>
+                <select class="form-control" id="year" name="year">
+                    <?php for ($i = date('Y') - 5; $i <= date('Y') + 5; $i++): ?>
+                        <option value="<?= $i ?>" <?= isset($selected_year) && $i == $selected_year ? 'selected' : '' ?>><?= $i ?></option>
+                    <?php endfor; ?>
+                </select>
+            </div>
 
-        <div class="form-group col-md-4">
-            <label for="month">Bulan</label>
-            <select class="form-control" id="month" name="month">
-                <?php for ($i = 1; $i <= 12; $i++): ?>
-                    <option value="<?= $i ?>" <?= $i == $selected_month ? 'selected' : '' ?>><?= date("F", mktime(0, 0, 0, $i, 10)) ?></option>
-                <?php endfor; ?>
-            </select>
-        </div>
+            <div class="form-group col-md-4">
+                <label for="month">Bulan</label>
+                <select class="form-control" id="month" name="month">
+                    <?php for ($i = 1; $i <= 12; $i++): ?>
+                        <option value="<?= $i ?>" <?= isset($selected_month) && $i == $selected_month ? 'selected' : '' ?>><?= date("F", mktime(0, 0, 0, $i, 10)) ?></option>
+                    <?php endfor; ?>
+                </select>
+            </div>
 
-        <div class="form-group col-md-4 align-self-end">
-            <button type="submit" class="btn btn-primary">Pilih</button>
+            <div class="form-group col-md-4 align-self-end">
+                <button type="submit" class="btn btn-primary">Pilih</button>
+            </div>
         </div>
-    </div>
-</form>
+    </form>
 
 
 <div class="container px-3 my-3">
 <div class="card">
   <div class="card-body">
     <h5 class="card-title text-center">Kalender Lab ERNC<sup>2</sup></h5>
-    <?php echo $kalender; ?>
+    <?= isset($kalender) ? $kalender : '' ?>
     <a>Klik 'Detail' untuk menampilkan detail data dari tanggal</a>
   </div>
 </div>
