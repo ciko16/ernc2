@@ -32,14 +32,14 @@ class Kalender_model extends CI_Model {
         {cal_cell_start_today}<td>{/cal_cell_start_today}
         {cal_cell_start_other}<td class="other-month">{/cal_cell_start_other}
 
-        {cal_cell_content}
-    <div class="day_num filled"><a href="{content}">{day}</a></div> <!-- {content} akan berisi link -->
-{/cal_cell_content}
-
-{cal_cell_content_today}
-    <div class="day_num highlight filled"><a href="{content}">{day}</a></div> <!-- {content} akan berisi link -->
-{/cal_cell_content_today}
-
+         {cal_cell_content}
+            <div class="day_num filled">{day}</div>
+            <div class="content">{content}</div>
+        {/cal_cell_content}
+        {cal_cell_content_today}
+        <div class="day_num highlight filled">{day}</div>
+        <div class="content">{content}</div>
+        {/cal_cell_content_today}
 
         {cal_cell_no_content}
             <div class="day_num empty">{day}</div>
@@ -86,11 +86,7 @@ class Kalender_model extends CI_Model {
         $calendar_date = date("j", strtotime($row->tanggal)); // Ambil tanggal hari saja
         $day_url = base_url("kalender/detail/" . $row->tanggal); // buat URL ke halaman detail
         // Gabungkan tanggal dengan HTML yang mengandung link
-        // $cal_data[(int)$calendar_date] = '<a href="#" class="detail-link" data-toggle="modal" data-target="#detailModal" data-isi="' . $row->isi . '" data-booking="' . $row->booking . '" data-tanggal="' . $row->tanggal . '">Detail</a>';
-         // Buat URL ke halaman detail
-
-         // Tanggal berisi link ke halaman detail
-         $cal_data[(int)$calendar_date] = '<a href="' . $day_url . '">' . $calendar_date . '</a>'; 
+        $cal_data[(int)$calendar_date] = '<a href="#" class="detail-link" data-toggle="modal" data-target="#detailModal" data-isi="' . $row->isi . '" data-booking="' . $row->booking . '" data-tanggal="' . $row->tanggal . '">Detail</a>';
     }
 
     return $cal_data;
