@@ -37,6 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
 </div>
 </div>
+<!-- untuk menampilkan pop-up -->
 <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -52,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <p><strong>Booking:</strong> <span id="modalBooking"></span></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
       </div>
     </div>
   </div>
