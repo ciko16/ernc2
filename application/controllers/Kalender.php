@@ -23,16 +23,16 @@ class Kalender extends CI_Controller {
     }
 
     public function detail($tanggal) {
-        // ambil detail data dari model berdasarkan tanggal
+        // Debugging untuk melihat apakah metode ini dipanggil
+        var_dump($tanggal); die();
         $data['detail'] = $this->Kalender_model->get_detail($tanggal);
-
+    
         if ($data['detail']) {
-            // load view dengan data detail
             $this->load->view('jadwalkalender/detail', $data);
         } else {
-            // Jika tidak ada data untuk tanggal tersebut, tampilkan halaman kalender
             redirect('kalender');
         }
     }
+    
 }
 ?>
