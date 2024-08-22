@@ -26,7 +26,7 @@ th {
 tr.week_name {
     font-size: 16px;
     font-weight: 400;
-    color: green;
+    color: red;
     width: 10px;
     background-color: #efe8e8;
 }
@@ -51,34 +51,11 @@ tr.week_name {
 .calender .days td:hover {
     background-color: #DEF;
 }
-.calender .filled {
-    background-color: green;
+/* .calender .filled {
+    background-color: red;
     color: white;
-}
+} */
 .calender .empty {
     background-color: green;
     color: white;
-}
-/* Warna oranye untuk tanggal yang tidak memiliki data booking */
-.no-booking {
-    background-color: orange;
-    color: white;
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    line-height: 80px; /* Sesuaikan dengan tinggi td */
-    text-decoration: none;
-}
-
-/* Warna lain untuk tanggal yang memiliki data booking */
-.with-booking {
-    background-color: red;
-    color: white;
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    line-height: 80px; /* Sesuaikan dengan tinggi td */
-    text-decoration: none;
 }
