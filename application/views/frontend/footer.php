@@ -67,22 +67,27 @@ $(document).ready(function() {
 });
 </script>
 <script>
-    $(document).on('click', '.detail-link', function() {
-        var tanggal = $(this).data('tanggal');
-        var isi = $(this).data('isi');
-        var booking = $(this).data('booking');
+    $(document).ready(function() {
+        // Event listener untuk membuka modal dan mengisi data
+        $('.detail-link').on('click', function() {
+            var tanggal = $(this).data('tanggal');
+            var isi = $(this).data('isi');
+            var booking = $(this).data('booking');
 
-        $('#modalTanggal').text(tanggal);
-        $('#modalIsi').text(isi);
-        
-        // Cek apakah booking ada atau kosong
-        if (booking) {
-            $('#modalBooking').text(booking);
-        } else {
-            $('#modalBooking').text('Tidak ada data booking');
-        }
+            // Set data ke dalam modal
+            $('#modalTanggal').text(tanggal);
+            $('#modalIsi').text(isi);
+
+            // Cek apakah booking ada atau kosong
+            if (booking) {
+                $('#modalBooking').text(booking);
+            } else {
+                $('#modalBooking').text('Tidak ada data booking');
+            }
+        });
     });
 </script>
+
 
 </body>
 </html>
