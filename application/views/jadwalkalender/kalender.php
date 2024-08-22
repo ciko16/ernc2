@@ -22,7 +22,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         .calendar-booking {
              font-weight: normal; /* Atur teks 'booking' menjadi normal */
         }
-        
+        .calender .filled {
+    background-color: red;
+    color: white;
+}
+
+/* Kalender dengan data booking kosong (warna oranye) */
+.calender .filled-no-booking {
+    background-color: orange;
+    color: white;
+}
+
+/* Pastikan tampilan diatur dengan baik */
+.calender .day_num {
+    display: block;
+    text-align: center;
+    line-height: 80px; /* Sesuaikan dengan tinggi td */
+    width: 100%;
+    height: 100%;
+}
     </style>
 </head>
 </head>

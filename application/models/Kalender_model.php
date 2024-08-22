@@ -90,8 +90,8 @@ class Kalender_model extends CI_Model {
         $class = empty($row->booking) ? 'filled-no-booking' : 'filled';
 
         // Gabungkan tanggal dengan HTML yang mengandung link dengan CSS
-        $cal_data[(int)$calendar_date] = '<div class="day_num ' . $class . '">' . $calendar_date . '</div><div class="content"><a href="#" class="detail-link" data-toggle="modal" 
-        data-target="#detailModal" data-isi="' . $row->isi . '" data-booking="' . $row->booking . '" data-tanggal="' . $row->tanggal . '">Detail</a></div>';
+        $cal_data[(int)$calendar_date] = '<a href="#" class="detail-link ' . $class . '" data-toggle="modal" data-target="#detailModal" data-isi="' . $row->isi . '" data-booking="'
+        . $row->booking . '" data-tanggal="' . $row->tanggal . '">Detail</a>';
     }
 
     return $cal_data;
