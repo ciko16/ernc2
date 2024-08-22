@@ -74,7 +74,13 @@ $(document).ready(function() {
 
         $('#modalTanggal').text(tanggal);
         $('#modalIsi').text(isi);
-        $('#modalBooking').text(booking);
+        
+        // Cek apakah booking ada atau kosong
+        if (booking) {
+            $('#modalBooking').text(booking);
+        } else {
+            $('#modalBooking').text('Tidak ada data booking');
+        }
     });
 </script>
 
