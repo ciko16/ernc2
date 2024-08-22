@@ -52,7 +52,7 @@ tr.week_name {
     background-color: #DEF;
 }
 .calender .filled {
-    background-color: red;
+    background-color: green;
     color: white;
 }
 .calender .empty {

@@ -33,6 +33,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     line-height: 80px; /* Sesuaikan dengan tinggi td */
     text-decoration: none;
 }
+.with-booking {
+    background-color: red;
+    color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 80px; /* Sesuaikan dengan tinggi td */
+    text-decoration: none;
+}
     </style>
 </head>
 </head>
