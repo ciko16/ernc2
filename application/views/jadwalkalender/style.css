@@ -61,7 +61,7 @@ tr.week_name {
 .no-booking {
     background-color: orange;
     color: white;
-    display: text;
+    display: block;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -71,7 +71,7 @@ tr.week_name {
 .with-booking {
     background-color: red;
     color: white;
-    display: text;
+    display: block;
     width: 100%;
     height: 100%;
     text-align: center;
