@@ -22,6 +22,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         .calendar-booking {
              font-weight: normal; /* Atur teks 'booking' menjadi normal */
         }
+        /* Warna oranye untuk tanggal yang tidak memiliki data booking */
+.no-booking {
+    background-color: orange;
+    color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 80px; /* Sesuaikan dengan tinggi td */
+    text-decoration: none;
+}
     </style>
 </head>
 </head>
