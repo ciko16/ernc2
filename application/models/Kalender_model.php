@@ -33,11 +33,11 @@ class Kalender_model extends CI_Model {
         {cal_cell_start_other}<td class="other-month">{/cal_cell_start_other}
 
          {cal_cell_content}
-            <div class="day_num {class}">{day}</div>
+            <div class="day_num filled">{day}</div>
             <div class="content">{content}</div>
         {/cal_cell_content}
         {cal_cell_content_today}
-        <div class="day_num highlight {class}">{day}</div>
+        <div class="day_num highlight filled">{day}</div>
         <div class="content">{content}</div>
         {/cal_cell_content_today}
 
@@ -87,11 +87,11 @@ class Kalender_model extends CI_Model {
         $day_url = base_url("kalender/detail/" . $row->tanggal); // buat URL ke halaman detail
 
         //  tentukan class CSS berdasarkan kondisi booking
-        $class = empty($row->booking) ? 'filled-no-booking' : 'filled';
+        $class = empty($row->booking) ? 'no-booking' : 'with-booking';
 
         // Gabungkan tanggal dengan HTML yang mengandung link dengan CSS
-        $cal_data[(int)$calendar_date] = '<div class="day_num ' . $class . '">' . $calendar_date . '</div><div class="content"><a href="#" class="detail-link" data-toggle="modal"
-         data-target="#detailModal" data-isi="' . $row->isi . '" data-booking="' . $row->booking . '" data-tanggal="' . $row->tanggal . '">Detail</a></div>';
+        $cal_data[(int)$calendar_date] = '<a href="#" class="detail-link ' . $class . '" data-toggle="modal" data-target="#detailModal" data-isi="' . $row->isi . '" data-booking="'
+        . $row->booking . '" data-tanggal="' . $row->tanggal . '">Detail</a>';
     }
 
     return $cal_data;
