@@ -91,7 +91,7 @@ class Kalender_model extends CI_Model {
 
         // Gabungkan tanggal dengan HTML yang mengandung link dengan CSS
         $cal_data[(int)$calendar_date] = '<a href="#" class="detail-link ' . $class . '" data-toggle="modal" data-target="#detailModal" data-isi="' . $row->isi . '" data-booking="'
-        . $row->booking . '" data-tanggal="' . $row->tanggal . '">' . $calendar_date . '</a>';
+        . $row->booking . '" data-tanggal="' . $row->tanggal . '">Detail</a>';
     }
 
     return $cal_data;
