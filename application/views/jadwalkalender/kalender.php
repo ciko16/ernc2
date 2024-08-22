@@ -35,6 +35,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <h5 class="card-title text-center">Kalender Lab ERNC<sup>2</sup></h5>
     <?php echo $kalender; ?>
     <a>Klik 'Detail' untuk menampilkan detail data dari tanggal</a>
+    <h5>Warna merah berisi data peminjaman</h5>
+    <br>
+    <h5>Warna oranye berisi data agenda lainnya</h5>
   </div>
 </div>
 </div>
