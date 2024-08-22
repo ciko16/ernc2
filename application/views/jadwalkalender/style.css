@@ -46,7 +46,7 @@ tr.week_name {
     height: 80px;
 }
 .calender .hightlight {
-    font-weight: 600;
+    font-weight: 300;
 }
 .calender .days td:hover {
     background-color: #DEF;
