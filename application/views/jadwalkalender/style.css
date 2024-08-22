@@ -33,13 +33,12 @@ tr.week_name {
 .highlight {
     background-color: #92c83c;
     color: white;
-    padding: 1rem;
+    padding: 0.5rem; /* Mengecilkan padding untuk memperkecil ukuran keseluruhan */
     border-radius: 0.25rem;
     border: 1px solid #dee2e6;
     margin-bottom: 1rem;
-    /* height: 27px;
-    padding-top: 13px;
-    padding-bottom: 7px; */
+    font-size: 0.9rem; /* Mengecilkan ukuran font */
+    line-height: 1.2; /* Menyesuaikan tinggi baris */
 }
 .calender .days td {
     width: 80px;
