@@ -95,7 +95,7 @@ Form Tambah Data Layanan Lab
             var jumlah_sampel = $('#jumlah_sampel').val();
             if (biaya && jumlah_sampel) {
                 var total_biaya = biaya * jumlah_sampel;
-                $('#biaya').val('Rp ' + formatRupiah(total_biaya.toString()));
+                $('#biaya').val('Rp. ' + formatRupiah(total_biaya.toString()));
             } else {
                 $('#biaya').val('');
             }
